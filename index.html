@@ -72,26 +72,26 @@
       object-position: center 35%; /* posun pro lepší výřez */
       display: none;
       border-radius: 0;
-      margin-bottom: 1.5rem; /* malý odstup pod bannerem */
     }
-    /* Úvodní text pod bannerem */
+    /* Úvodní text pod bannerem bez boxu */
     .intro-box {
-      margin-top: 0;
-      padding: 2rem;
-      background: #fffdf7;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #4B3B2B;
+      margin-top: 1rem; /* malý odstup od banneru */
+      padding: 0;
+      background: transparent; /* bez pozadí */
+      box-shadow: none;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #1a1a1a; /* tmavší barva textu */
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* jemný světlejší stín na text */
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
     }
     .intro-box h1 {
       font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #2E4A1F;
+      margin-bottom: 0.6rem;
+      color: #111; /* ještě tmavší hlavní nadpis */
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
     }
     .intro-box p {
       margin-bottom: 1rem;
@@ -218,24 +218,4 @@
 
     // Banner jen u úvodu
     if (id === 'uvod') {
-      banner.style.display = 'block';
-    } else {
-      banner.style.display = 'none';
-    }
-  }
-
-  menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const targetId = item.getAttribute('data-target');
-      showSection(targetId);
-      const sectionTop = document.getElementById(targetId).offsetTop - 70;
-      window.scrollTo({ top: sectionTop, behavior: 'smooth' });
-    });
-  });
-
-  // Načtení úvodu při startu
-  showSection('uvod');
-</script>
-
-</body>
-</html>
+      banner.style.display = '
