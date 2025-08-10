@@ -414,22 +414,92 @@
     <h2>Přihláška</h2>
     <p>Přihláška na tábor bude dostupná zde.</p>
   </section>
-<!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/mpwlkyyj"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Odeslat přihlášku</button>
-</form>
+<style>
+.form-group {
+  margin-bottom: 18px;
+}
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #3c3c3c;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  background-color: #fff;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ff8c2f;
+  box-shadow: 0 0 6px rgba(255,140,47,0.4);
+  outline: none;
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.form-container {
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff9900, #ff6600);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background: linear-gradient(90deg, #ff8800, #ff5500);
+}
+</style>
+
+<div class="form-container">
+  <form action="https://formspree.io/f/mpwlkyyj" method="POST">
+    <div class="form-group">
+      <label for="jmeno">Jméno a příjmení dítěte:</label>
+      <input type="text" id="jmeno" name="jmeno" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail zákonného zástupce:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="narozeni">Rok narození dítěte:</label>
+      <input type="date" id="narozeni" name="narozeni" required>
+    </div>
+
+    <div class="form-group">
+      <label for="telefon">Telefonní číslo:</label>
+      <input type="tel" id="telefon" name="telefon" required>
+    </div>
+
+    <div class="form-group">
+      <label for="tricko">Velikost trička (XS-S-M-L-XL-XXL) + Adresa bydliště:</label>
+      <textarea id="tricko" name="tricko" required></textarea>
+    </div>
+
+    <button type="submit">Odeslat</button>
+  </form>
+</div>
+
   <section id="dulezite" class="content-section">
     <h2>Důležité informace</h2>
     <p>Informace pro rodiče a účastníky.</p>
@@ -497,4 +567,5 @@
 
 </body>
 </html>
+
 
