@@ -121,6 +121,66 @@
       font-weight: 700;
       font-size: 1.4rem;
     }
+    /* Personál styl */
+    .personnel {
+      margin-top: 3rem;
+    }
+    .personnel h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #2E4A1F;
+      border-bottom: 3px solid #7BB661;
+      padding-bottom: 0.3rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .personnel-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .personnel-card {
+      flex: 1 1 280px;
+      background: #F5F1E9;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(46, 74, 31, 0.1);
+      display: flex;
+      padding: 1rem;
+      align-items: center;
+      gap: 1rem;
+      color: #2E4A1F;
+      min-width: 280px;
+    }
+    .personnel-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid #7BB661;
+    }
+    .personnel-info {
+      flex-grow: 1;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+    .personnel-info strong {
+      font-weight: 700;
+      font-size: 1.15rem;
+      display: block;
+      margin-bottom: 0.2rem;
+      color: #2E4A1F;
+    }
+    .personnel-info span {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #4B3B2B;
+    }
+    .personnel-info em {
+      color: #6B7B53;
+      font-style: normal;
+    }
     footer {
       background: #F5F1E9;
       text-align: center;
@@ -130,6 +190,14 @@
       font-weight: 600;
       letter-spacing: 1px;
       border-top: 1px solid #E0E0D8;
+    }
+    @media (max-width: 600px) {
+      .personnel-list {
+        flex-direction: column;
+      }
+      .personnel-card {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
@@ -194,70 +262,170 @@
       O bezproblémové zázemí tábora se stará Míra, zvaný Mumuland.
       Kvalitní program pro děti zajišťují lidé, kteří mají zkušenosti s dětskými tábory a kteří to dělají rádi.
     </p>
+
+    <!-- Personál -->
+    <div class="personnel">
+      <h2>Personál</h2>
+      <div class="personnel-list">
+        <!-- Jitka Jabůrková -->
+        <div class="personnel-card">
+          <img src="images/jitka hlavní veoducí.jpg" alt="Jitka Jabůrková" />
+          <div class="personnel-info">
+            <strong>Jitka Jabůrková</strong>
+            <span><em>Kája, Koudelková</em></span>
+            <span>Hlavní vedoucí</span>
+            <span>Zdravotník</span>
+          </div>
+        </div>
+        <!-- Miloš Kratochvíl -->
+        <div class="personnel-card">
+          <img src="images/miloš oddílak.jpg" alt="Miloš Kratochvíl" />
+          <div class="personnel-info">
+            <strong>Miloš Kratochvíl</strong>
+            <span><em>Koudelka</em></span>
+            <span>Oddílák – 2. oddíl</span>
+          </div>
+        </div>
+        <!-- Světlana Škorpilová -->
+        <div class="personnel-card">
+          <img src="images/svetlanka zastupce hl vednoucí.jpg" alt="Světlana Škorpilová" />
+          <div class="personnel-info">
+            <strong>Světlana Škorpilová</strong>
+            <span><em>Světluška</em></span>
+            <span>Oddílák – 3. oddíl</span>
+            <span>Zástupce HV</span>
+          </div>
+        </div>
+        <!-- Jan Frýba -->
+        <div class="personnel-card">
+          <img src="images/jan frýba oddílak.jpg" alt="Jan Frýba" />
+          <div class="personnel-info">
+            <strong>Jan Frýba</strong>
+            <span><em>Čiko</em></span>
+            <span>Oddílák – 4. oddíl</span>
+          </div>
+        </div>
+        <!-- Filip Adam -->
+        <div class="personnel-card">
+          <img src="images/filip oddílak.jpg" alt="Filip Adam" />
+          <div class="personnel-info">
+            <strong>Filip Adam</strong>
+            <span>Oddílák – 5. oddíl</span>
+          </div>
+        </div>
+        <!-- Laura Bruchanová -->
+        <div class="personnel-card">
+          <img src="images/laura oddílak.jpg" alt="Laura Bruchanová" />
+          <div class="personnel-info">
+            <strong>Laura Bruchanová</strong>
+            <span>Oddílák – 1. oddíl</span>
+          </div>
+        </div>
+        <!-- Natálie Kratochvílová -->
+        <div class="personnel-card">
+          <img src="images/naty praktikant.jpg" alt="Natálie Kratochvílová" />
+          <div class="personnel-info">
+            <strong>Natálie Kratochvílová</strong>
+            <span>Praktikant – 2. oddíl</span>
+          </div>
+        </div>
+        <!-- Zuzana Čepičková -->
+        <div class="personnel-card">
+          <img src="images/zuzana praktitkan.jpg" alt="Zuzana Čepičková" />
+          <div class="personnel-info">
+            <strong>Zuzana Čepičková</strong>
+            <span>Praktikant – 1. oddíl</span>
+          </div>
+        </div>
+        <!-- Matyáš Růžička -->
+        <div class="personnel-card">
+          <img src="images/maty praktikant.jpg" alt="Matyáš Růžička" />
+          <div class="personnel-info">
+            <strong>Matyáš Růžička</strong>
+            <span>Praktikant – 4. oddíl</span>
+          </div>
+        </div>
+        <!-- Ondřej Ladnar -->
+        <div class="personnel-card">
+          <img src="images/ondra ladnar.jpg" alt="Ondřej Ladnar" />
+          <div class="personnel-info">
+            <strong>Ondřej Ladnar</strong>
+            <span>Ferda Mravenec</span>
+          </div>
+        </div>
+        <!-- Marie Růžičková -->
+        <div class="personnel-card">
+          <img src="images/marie praktikant.jpg" alt="Marie Růžičková" />
+          <div class="personnel-info">
+            <strong>Marie Růžičková</strong>
+            <span><em>Mažu</em></span>
+            <span>Praktikant – 5. oddíl</span>
+          </div>
+        </div>
+        <!-- Kryštof Škorpil -->
+        <div class="personnel-card">
+          <img src="images/kryštof praktikant.jpg" alt="Kryštof Škorpil" />
+          <div class="personnel-info">
+            <strong>Kryštof Škorpil</strong>
+            <span><em>Tůta</em></span>
+            <span>Praktikant – 3. oddíl</span>
+          </div>
+        </div>
+        <!-- Lenka Kremličková -->
+        <div class="personnel-card">
+          <img src="images/lenička kuchařka.jpg" alt="Lenka Kremličková" />
+          <div class="personnel-info">
+            <strong>Lenka Kremličková</strong>
+            <span><em>Naše Lenička</em></span>
+            <span>Kuchařka</span>
+          </div>
+        </div>
+        <!-- Radek Špejzl -->
+        <div class="personnel-card">
+          <img src="images/.gitkeep" alt="Radek Špejzl" style="display:none;" />
+          <div class="personnel-info">
+            <strong>Radek Špejzl</strong>
+            <span><em>Vařečka</em></span>
+            <span>Kuchař</span>
+          </div>
+        </div>
+        <!-- Lucie Hybnerová -->
+        <div class="personnel-card">
+          <img src="images/luca zdravotník.jpg" alt="Lucie Hybnerová" />
+          <div class="personnel-info">
+            <strong>Lucie Hybnerová</strong>
+            <span><em>Božík</em></span>
+            <span>Zdravotník</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
-  <section id="prihlaska" class="content-section">
-    <p>Formulář a informace pro přihlášení.</p>
-  </section>
+  <!-- Další sekce podle potřeby ... -->
 
-  <section id="dulezite" class="content-section">
-    <p>Důležité informace k táboru.</p>
-  </section>
-
-  <section id="program" class="content-section">
-    <p>Program a jídelníček.</p>
-  </section>
-
-  <section id="fotogalerie" class="content-section">
-    <p>Fotogalerie z minulých ročníků.</p>
-  </section>
-
-  <section id="kontakt" class="content-section">
-    <p>Kontaktní informace.</p>
-  </section>
-
-  <section id="reference" class="content-section">
-    <p>Reference a doporučení.</p>
-  </section>
-
-  <section id="sponzori" class="content-section">
-    <p>Sponzoři a partneři.</p>
-  </section>
 </main>
 
 <footer>
-  &copy; 2025 Pleskotaček
+  &copy; 2025 Pleskotaček – Všechna práva vyhrazena
 </footer>
 
 <script>
-  const menuItems = document.querySelectorAll('#menu div');
-  const contentSections = document.querySelectorAll('.content-section');
-  const banner = document.getElementById('banner');
-
-  function showSection(id) {
-    contentSections.forEach(sec => sec.classList.remove('active'));
-    menuItems.forEach(i => i.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    document.querySelector(`#menu div[data-target="${id}"]`).classList.add('active');
-
-    // Banner jen u úvodu
-    if (id === 'uvod') {
-      banner.style.display = 'block';
-    } else {
-      banner.style.display = 'none';
-    }
-  }
-
+  const menuItems = document.querySelectorAll('nav div');
+  const sections = document.querySelectorAll('.content-section');
   menuItems.forEach(item => {
     item.addEventListener('click', () => {
-      const targetId = item.getAttribute('data-target');
-      showSection(targetId);
-      const sectionTop = document.getElementById(targetId).offsetTop - 70;
-      window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+      // odstraní aktivní třídu všem položkám menu a sekcím
+      menuItems.forEach(i => i.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+
+      // přidá aktivní třídu kliknutému menu a odpovídající sekci
+      item.classList.add('active');
+      const target = item.getAttribute('data-target');
+      document.getElementById(target).classList.add('active');
     });
   });
-
-  showSection('uvod');
 </script>
 
 </body>
