@@ -410,95 +410,58 @@
 
   </section>
 
-  <section id="prihlaska" class="content-section">
-    <h2>Přihláška</h2>
-    <p>Přihláška na tábor bude dostupná zde.</p>
-  </section>
-<style>
-.form-group {
-  margin-bottom: 18px;
-}
-.form-group label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 6px;
-  font-size: 15px;
-  color: #3c3c3c;
-}
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 11px 12px;
-  font-size: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: all 0.25s ease;
-  background-color: #fff;
-}
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #ff8c2f;
-  box-shadow: 0 0 6px rgba(255,140,47,0.4);
-  outline: none;
-}
-.form-group textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-.form-container {
-  max-width: 520px;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-}
-button {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  font-weight: bold;
-  background: linear-gradient(90deg, #ff9900, #ff6600);
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-button:hover {
-  background: linear-gradient(90deg, #ff8800, #ff5500);
-}
-</style>
+ <section id="prihlaska" class="content-section">
+  <h2>Přihláška</h2>
+  <div class="intro-box" style="margin-bottom: 1.5rem; font-size: 1rem; line-height: 1.5; color: #4B3B2B;">
+    <p><strong>Přihláška a dokumenty :</strong></p>
+    <p><strong>Jak přihlásit dítě na tábor?</strong></p>
+    <p>Pokud máte vážný zájem o účast vašeho dítěte na táboře, vyplňte prosím níže uvedený formulář. Pokud byste měli speciální požadavky, např. ohledně stravy (bezlepková, popřípadě jiná) či jiné požadavky, prosím o poslání informace emailem. Budeme se snažit ve všem vyhovět.</p>
+    <p>Bohužel občas nám stávkuje technika a ne vždy nám dorazí vyplněné přihlášky. Pokud jste odeslali přihlášku a do druhého dne vám nepřijde od nás potvrzení, prosím pokuste se přihlášku odeslat znovu nebo nám napište email na <a href="mailto:taborpleskotacek@seznam.cz">taborpleskotacek@seznam.cz</a>. Děkuji za pochopení.</p>
+    <p>Pokud budete potřebovat vystavit fakturu a potvrzení pro zaměstnavatele, kontaktujte nás na náš email <a href="mailto:taborpleskotacek@seznam.cz">taborpleskotacek@seznam.cz</a>.</p>
+    <p>Vyplněním a odesláním přihlášky souhlasíte s:</p>
+    <ul>
+      <li>V případě odhlášení dítěte z tábora během června stornujeme 50% celkové ceny tábora, během července pak 100% částky z celkové ceny tábora. Je to z důvodu již nakoupených potřeb, odměn, ostatní potřebné režie a pronájmu tábora.</li>
+      <li>Při neomluveném nenastoupení dítěte na táborový pobyt se nevrací nic.</li>
+      <li>V případě, že dítě onemocní/zraní se před nástupem na tábor nebo v den začátku tábora je nutné potvrzení od lékaře.</li>
+    </ul>
+    <p>Děkujeme za pochopení.</p>
+    <p><strong>Pojištění:</strong> pojištění dětí nezajišťujeme. Předpokládáme, že každé dítě má své pojištění zajištěno.</p>
+    <p>V případě jakéhokoliv dotazu nás neváhejte kontaktovat přes telefon či email, který naleznete v kontaktech.</p>
+    <p>Informace o platbě a dokumentech potřebných k táboru, obdržíte po vyplnění přihlášky do dvou dnů od odeslání přihlášky.</p>
+  </div>
 
-<div class="form-container">
-  <form action="https://formspree.io/f/mpwlkyyj" method="POST">
-    <div class="form-group">
-      <label for="jmeno">Jméno a příjmení dítěte:</label>
-      <input type="text" id="jmeno" name="jmeno" required>
-    </div>
+  <!-- Původní formulář zůstává zde -->
+  <div class="form-container">
+    <form action="https://formspree.io/f/mpwlkyyj" method="POST">
+      <div class="form-group">
+        <label for="jmeno">Jméno a příjmení dítěte:</label>
+        <input type="text" id="jmeno" name="jmeno" required>
+      </div>
 
-    <div class="form-group">
-      <label for="email">E-mail zákonného zástupce:</label>
-      <input type="email" id="email" name="email" required>
-    </div>
+      <div class="form-group">
+        <label for="email">E-mail zákonného zástupce:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
 
-    <div class="form-group">
-      <label for="narozeni">Rok narození dítěte:</label>
-      <input type="date" id="narozeni" name="narozeni" required>
-    </div>
+      <div class="form-group">
+        <label for="narozeni">Rok narození dítěte:</label>
+        <input type="date" id="narozeni" name="narozeni" required>
+      </div>
 
-    <div class="form-group">
-      <label for="telefon">Telefonní číslo:</label>
-      <input type="tel" id="telefon" name="telefon" required>
-    </div>
+      <div class="form-group">
+        <label for="telefon">Telefonní číslo:</label>
+        <input type="tel" id="telefon" name="telefon" required>
+      </div>
 
-    <div class="form-group">
-      <label for="tricko">Velikost trička (XS-S-M-L-XL-XXL)</label>
-      <textarea id="tricko" name="tricko" required></textarea>
-    </div>
+      <div class="form-group">
+        <label for="tricko">Velikost trička (XS-S-M-L-XL-XXL)</label>
+        <textarea id="tricko" name="tricko" required></textarea>
+      </div>
 
-    <button type="submit">Odeslat</button>
-  </form>
-</div>
+      <button type="submit">Odeslat přihlášku</button>
+    </form>
+  </div>
+</section>
 
   <section id="dulezite" class="content-section">
     <h2>Důležité informace</h2>
@@ -567,6 +530,7 @@ button:hover {
 
 </body>
 </html>
+
 
 
 
