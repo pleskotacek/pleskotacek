@@ -264,11 +264,50 @@
       Kvalitní program pro děti zajišťují lidé, kteří mají zkušenosti s dětskými tábory a kteří to dělají rádi.
     </p>
 
-    <!-- Personál (zůstává stejný) -->
+    <!-- Personál -->
     <div class="personnel">
       <h2>Personál</h2>
       <div class="personnel-list">
-        <!--... tvé personální karty ...-->
+        <div class="personnel-card">
+          <img src="images/radek.jpg" alt="Radek" />
+          <div class="personnel-info">
+            <strong>Radek</strong>
+            <span>Kuchař</span>
+            <em>Pečuje o chutné a vyvážené jídlo pro děti</em>
+          </div>
+        </div>
+        <div class="personnel-card">
+          <img src="images/lenka.jpg" alt="Léňa" />
+          <div class="personnel-info">
+            <strong>Léňa</strong>
+            <span>Kuchařka</span>
+            <em>Specialistka na dětské svačinky</em>
+          </div>
+        </div>
+        <div class="personnel-card">
+          <img src="images/lucka.jpg" alt="Lucka" />
+          <div class="personnel-info">
+            <strong>Lucka</strong>
+            <span>Zdravotnice</span>
+            <em>Profesionální zdravotní sestřička</em>
+          </div>
+        </div>
+        <div class="personnel-card">
+          <img src="images/kristyna.jpg" alt="Kristýna" />
+          <div class="personnel-info">
+            <strong>Kristýna</strong>
+            <span>Zdravotnice</span>
+            <em>Odborná péče a dohled nad zdravím dětí</em>
+          </div>
+        </div>
+        <div class="personnel-card">
+          <img src="images/mira.jpg" alt="Míra" />
+          <div class="personnel-info">
+            <strong>Míra (Mumuland)</strong>
+            <span>Organizátor</span>
+            <em>Zajišťuje hladký chod tábora</em>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -302,92 +341,71 @@
   <section id="fotogalerie" class="content-section">
     <h2>Fotogalerie</h2>
     <p>Zde najdete fotografie z našich předešlých táborů.</p>
-    <!-- Můžeš přidat galerie, pokud chceš -->
+    <!-- Galerie sem můžeš doplnit -->
   </section>
 
   <section id="kontakt" class="content-section">
     <h2>Kontakt</h2>
-    <p>Máte-li dotazy, napište nám na email info@pleskotacek.cz nebo zavolejte +420 123 456 789.</p>
-    <p>Adresa tábora: Pleskotská 123, 511 01 Turnov</p>
+    <p>Máte-li jakékoliv dotazy, napište nám nebo zavolejte.</p>
+    <p><strong>Telefon:</strong> +420 123 456 789</p>
+    <p><strong>Email:</strong> info@pleskotacek.cz</p>
   </section>
 
   <section id="reference" class="content-section">
     <h2>Reference</h2>
     <p>
-      "Můj syn si tábor moc užil a už se nemůže dočkat příštího léta!" – Jana K.
-    </p>
-    <p>
-      "Skvělá organizace a přátelský personál, děkujeme!" – Petr L.
+      „Tábor Pleskotaček byl pro mé děti nezapomenutelným zážitkem, děkuji všem organizátorům!“ – Jana K.
     </p>
   </section>
 
   <section id="sponzori" class="content-section">
     <h2>Sponzoři</h2>
-    <p>
-      Děkujeme všem našim sponzorům za podporu a pomoc při pořádání tábora.
-    </p>
-    <ul>
-      <li>Firma ABC</li>
-      <li>Obec Pleskotské</li>
-      <li>Sportovní klub XYZ</li>
-    </ul>
+    <p>Děkujeme našim sponzorům za podporu.</p>
   </section>
 </main>
 
 <footer>
-  &copy; 2025 Pleskotaček – Všechna práva vyhrazena
+  &copy; 2025 Pleskotaček – Dětský tábor v Českém ráji
 </footer>
 
 <script>
   const menuItems = document.querySelectorAll('nav div');
-  const sections = document.querySelectorAll('section.content-section');
+  const sections = document.querySelectorAll('.content-section');
   const banner = document.getElementById('banner');
+
+  // Propojení sekcí a bannerů podle id sekce
+  const banners = {
+    uvod: 'images/celztaborfotka.jpg',
+    onas: 'images/onas.jpg',
+    prihlaska: 'images/prihlaska.jpg',
+    dulezite: 'images/dulezite.jpg',
+    program: 'images/program.jpg',
+    fotogalerie: 'images/fotogalerie.jpg',
+    kontakt: 'images/kontakt.jpg',
+    reference: 'images/reference.jpg',
+    sponzori: 'images/sponzori.jpg'
+  };
 
   menuItems.forEach(item => {
     item.addEventListener('click', () => {
-      // Odeber aktivní třídu z menu a sekcí
+      // Odebrat aktivní třídu ze všech menu
       menuItems.forEach(i => i.classList.remove('active'));
-      sections.forEach(s => s.classList.remove('active'));
-
-      // Přidej aktivní třídu kliknutému menu a odpovídající sekci
+      // Nastavit aktivní na kliknutý
       item.classList.add('active');
+
+      // Skrýt všechny sekce
+      sections.forEach(section => section.classList.remove('active'));
+
+      // Zobrazit sekci dle datového atributu
       const target = item.getAttribute('data-target');
-      const activeSection = document.getElementById(target);
-      if (activeSection) {
-        activeSection.classList.add('active');
+      const targetSection = document.getElementById(target);
+      if (targetSection) {
+        targetSection.classList.add('active');
       }
 
-      // Změna banneru podle sekce (přidej své cesty k obrázkům)
-      switch(target) {
-        case 'uvod':
-          banner.src = 'images/celztaborfotka.jpg';
-          break;
-        case 'onas':
-          banner.src = 'images/onas.jpg';
-          break;
-        case 'prihlaska':
-          banner.src = 'images/prihlaska.jpg';
-          break;
-        case 'dulezite':
-          banner.src = 'images/dulezite.jpg';
-          break;
-        case 'program':
-          banner.src = 'images/program.jpg';
-          break;
-        case 'fotogalerie':
-          banner.src = 'images/fotogalerie.jpg';
-          break;
-        case 'kontakt':
-          banner.src = 'images/kontakt.jpg';
-          break;
-        case 'reference':
-          banner.src = 'images/reference.jpg';
-          break;
-        case 'sponzori':
-          banner.src = 'images/sponzori.jpg';
-          break;
-        default:
-          banner.src = 'images/celztaborfotka.jpg';
+      // Změnit banner podle sekce, pokud existuje
+      if (banners[target]) {
+        banner.src = banners[target];
       }
     });
   });
