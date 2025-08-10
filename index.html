@@ -1,139 +1,125 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Pleskotaček</title>
-<style>
-  body {
-    font-family: 'Inter', sans-serif;
-    margin: 0; padding: 0;
-    background: #fff;
-    color: #2E4A1F;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 60px;
-  }
-  header {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: #F5F1E9;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    padding: 0 1.5rem;
-    box-shadow: 0 2px 5px rgba(46,74,31,0.15);
-    z-index: 1000;
-  }
-  header .logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #2E4A1F;
-    user-select: none;
-  }
-  nav {
-    margin-left: auto;
-    display: flex;
-    gap: 1.2rem;
-  }
-  nav div {
-    cursor: pointer;
-    font-weight: 600;
-    padding: 0.4rem 0.7rem;
-    border-radius: 4px;
-    color: #4B3B2B;
-    user-select: none;
-    white-space: nowrap;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  nav div:hover, nav div.active {
-    background-color: #7BB661;
-    color: white;
-  }
-
-  #banner {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    object-position: center 60%;
-    display: block;
-    border-radius: 0;
-    margin-bottom: 2rem;
-  }
-
-  section.content-section {
-    display: none;
-  }
-  section.content-section.active {
-    display: block;
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <div class="logo">Pleskotaček</div>
-  <nav id="menu">
-    <div data-target="uvod" class="active">Úvod</div>
-    <div data-target="onas">O nás</div>
-    <div data-target="prihlaska">Přihláška</div>
-    <div data-target="dulezite">Důležité informace</div>
-    <div data-target="program">Program a jídelníček</div>
-    <div data-target="fotogalerie">Fotogalerie</div>
-    <div data-target="kontakt">Kontakt</div>
-    <div data-target="reference">Reference</div>
-    <div data-target="sponzori">Sponzoři</div>
-  </nav>
-</header>
-
-<!-- Banner viditelný jen u Úvod -->
-<img id="banner" src="celztaborfotka.jpg" alt="Banner Pleskotaček" />
-
-<!-- Sekce -->
-<section id="uvod" class="content-section active">
-  <h1>Úvod</h1>
-  <p>Vítejte na stránkách našeho dětského tábora...</p>
-</section>
-
-<section id="onas" class="content-section">
-  <h1>O nás</h1>
-  <p>Záleží nám na tom, aby si Vaše děti užily tábor ve vší parádě ...</p>
-  <!-- další obsah... -->
-</section>
-
-<!-- další sekce ... -->
-
-<script>
-  const menuItems = document.querySelectorAll('#menu div');
-  const sections = document.querySelectorAll('.content-section');
-  const banner = document.getElementById('banner');
-
-  menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-      // Odstraníme aktivitu z menu
-      menuItems.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-
-      // Skryjeme všechny sekce
-      sections.forEach(section => section.classList.remove('active'));
-
-      // Zobrazíme vybranou sekci
-      const targetId = item.getAttribute('data-target');
-      const targetSection = document.getElementById(targetId);
-      if (targetSection) {
-        targetSection.classList.add('active');
-      }
-
-      // Banner zobrazujeme jen u úvodu
-      if (targetId === 'uvod') {
-        banner.style.display = 'block';
-      } else {
-        banner.style.display = 'none';
-      }
-    });
-  });
-</script>
-
-</body>
-</html>
+<!-- Personál -->
+<div class="personnel">
+  <h2>Personál</h2>
+  <div class="personnel-list">
+    <!-- Jitka Jabůrková -->
+    <div class="personnel-card">
+      <img src="images/jitka hlavní veoducí.jpg" alt="Jitka Jabůrková" />
+      <div class="personnel-info">
+        <strong>Jitka Jabůrková</strong>
+        <span><em>Kája, Koudelková</em></span>
+        <span>Hlavní vedoucí</span>
+        <span>Zdravotník</span>
+      </div>
+    </div>
+    <!-- Miloš Kratochvíl -->
+    <div class="personnel-card">
+      <img src="images/milos oddilak.jpg" alt="Miloš Kratochvíl" />
+      <div class="personnel-info">
+        <strong>Miloš Kratochvíl</strong>
+        <span><em>Koudelka</em></span>
+        <span>Oddílák – 2. oddíl</span>
+      </div>
+    </div>
+    <!-- Světlana Škorpilová -->
+    <div class="personnel-card">
+      <img src="images/svetlana oddilak.jpg" alt="Světlana Škorpilová" />
+      <div class="personnel-info">
+        <strong>Světlana Škorpilová</strong>
+        <span><em>Světluška</em></span>
+        <span>Oddílák – 3. oddíl</span>
+        <span>Zástupce HV</span>
+      </div>
+    </div>
+    <!-- Jan Frýba -->
+    <div class="personnel-card">
+      <img src="images/jan fryba.jpg" alt="Jan Frýba" />
+      <div class="personnel-info">
+        <strong>Jan Frýba</strong>
+        <span><em>Čiko</em></span>
+        <span>Oddílák – 4. oddíl</span>
+      </div>
+    </div>
+    <!-- Filip Adam -->
+    <div class="personnel-card">
+      <img src="images/filip adam.jpg" alt="Filip Adam" />
+      <div class="personnel-info">
+        <strong>Filip Adam</strong>
+        <span></span>
+        <span>Oddílák – 5. oddíl</span>
+      </div>
+    </div>
+    <!-- Laura Bruchanová -->
+    <div class="personnel-card">
+      <img src="images/laura bruchanova.jpg" alt="Laura Bruchanová" />
+      <div class="personnel-info">
+        <strong>Laura Bruchanová</strong>
+        <span></span>
+        <span>Oddílák – 1. oddíl</span>
+      </div>
+    </div>
+    <!-- Natálie Kratochvílová -->
+    <div class="personnel-card">
+      <img src="images/natalie kratochvilova.jpg" alt="Natálie Kratochvílová" />
+      <div class="personnel-info">
+        <strong>Natálie Kratochvílová</strong>
+        <span></span>
+        <span>Praktikant – 2. oddíl</span>
+      </div>
+    </div>
+    <!-- Marie Růžičková -->
+    <div class="personnel-card">
+      <img src="images/marie ruzickova.jpg" alt="Marie Růžičková" />
+      <div class="personnel-info">
+        <strong>Marie Růžičková</strong>
+        <span><em>Mažu</em></span>
+        <span>Praktikant – 5. oddíl</span>
+      </div>
+    </div>
+    <!-- Kryštof Škorpil -->
+    <div class="personnel-card">
+      <img src="images/krystof skorpil.jpg" alt="Kryštof Škorpil" />
+      <div class="personnel-info">
+        <strong>Kryštof Škorpil</strong>
+        <span><em>Tůta</em></span>
+        <span>Praktikant – 3. oddíl</span>
+      </div>
+    </div>
+    <!-- Lenka Kremličková -->
+    <div class="personnel-card">
+      <img src="images/lenka kremlickova.jpg" alt="Lenka Kremličková" />
+      <div class="personnel-info">
+        <strong>Lenka Kremličková</strong>
+        <span><em>naše Lenička</em></span>
+        <span>Kuchařka</span>
+      </div>
+    </div>
+    <!-- Lucie Hybnerová -->
+    <div class="personnel-card">
+      <img src="images/lucie hybnerova.jpg" alt="Lucie Hybnerová" />
+      <div class="personnel-info">
+        <strong>Lucie Hybnerová</strong>
+        <span><em>Božík</em></span>
+        <span>Zdravotník</span>
+      </div>
+    </div>
+    <!-- Kristýna Malíková -->
+    <div class="personnel-card">
+      <img src="images/kristyna malikova.jpg" alt="Kristýna Malíková" />
+      <div class="personnel-info">
+        <strong>Kristýna Malíková</strong>
+        <span><em>Fanouš</em></span>
+        <span>Zdravotník</span>
+      </div>
+    </div>
+    <!-- Miroslav Rosek -->
+    <div class="personnel-card">
+      <img src="images/miroslav rosek.jpg" alt="Miroslav Rosek" />
+      <div class="personnel-info">
+        <strong>Miroslav Rosek</strong>
+        <span><em>Mumuland</em></span>
+        <span>Ochranka, závozník</span>
+      </div>
+    </div>
+  </div>
+</div>
