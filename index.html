@@ -46,7 +46,6 @@
       gap: 1.2rem;
       font-weight: 600;
       cursor: pointer;
-      flex-wrap: wrap;
     }
     nav div {
       color: #4B3B2B;
@@ -69,23 +68,28 @@
     }
     .banner {
       width: 100%;
-      height: 400px;
+      height: 800px;
       object-fit: cover;
       object-position: center 60%;
       display: block;
       border-radius: 0;
-      margin-bottom: 2rem;
     }
     .intro-box {
+      position: relative;
       max-width: 900px;
+      margin-top: 2rem;
       padding: 2rem 1rem;
       background: #fff;
       color: #2E4A1F;
       font-size: 1.15rem;
       line-height: 1.7;
       text-align: left;
+      box-shadow: none;
       border: none;
-      margin-bottom: 3rem;
+      margin-left: 0 !important;
+      width: 900px;
+      left: 0;
+      position: relative;
     }
     .intro-box h1 {
       margin-bottom: 1rem;
@@ -177,43 +181,6 @@
       color: #6B7B53;
       font-style: normal;
     }
-    /* Formulář */
-    form {
-      background: #F5F1E9;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(46, 74, 31, 0.1);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    form label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: #2E4A1F;
-    }
-    form input, form select, form textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      font-family: 'Inter', sans-serif;
-    }
-    form button {
-      background-color: #7BB661;
-      color: #fff;
-      padding: 0.7rem 1.5rem;
-      border: none;
-      border-radius: 4px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    form button:hover {
-      background-color: #5e8b41;
-    }
     footer {
       background: #F5F1E9;
       text-align: center;
@@ -231,12 +198,6 @@
       .personnel-card {
         flex: 1 1 100%;
       }
-      nav {
-        justify-content: center;
-      }
-      .banner {
-        height: 250px;
-      }
     }
   </style>
 </head>
@@ -245,7 +206,7 @@
 <header>
   <div class="logo">Pleskotaček</div>
   <nav id="menu">
-    <div data-target="uvod" class="active">Úvod</div>
+    <div data-target="uvod">Úvod</div>
     <div data-target="onas">O nás</div>
     <div data-target="prihlaska">Přihláška</div>
     <div data-target="dulezite">Důležité informace</div>
@@ -260,205 +221,210 @@
 <img id="banner" class="banner" src="images/celztaborfotka.jpg" alt="Táborový banner" />
 
 <main>
-  <!-- Úvod -->
   <section id="uvod" class="content-section active">
     <div class="intro-box">
       <h1>Dětský tábor Pleskoťáček 🙂</h1>
       <p>
-        Krásné prostředí Českého ráje. Zkušený, zodpovědný personál, pohoda, soutěže a sportovní klání.
-        Pojď si užít týden plný zábavy, kamarádů a dobrodružství! Jsme otevřeni všem dětem.
+        Krásné prostředí Českého ráje. Zkušený, zodpovědný personál zaručí, že vaše děti u nás budou spokojené.
+        Přivezte nám své dítko do Pleskot, užít si velké prázdninové dobrodružství!
+      </p>
+      <p><strong>Termín tábora:</strong> 27. 7. – 9. 8. 2025</p>
+      <p><strong>Věk účastníků:</strong> 6 – 16 let (ročníky 2019 – 2009)</p>
+      <p><strong>Cena:</strong> 8 700 Kč</p>
+      <p>
+        Záleží nám na tom, aby si Vaše děti užily tábor ve vší parádě a domů si odvezly plno skvělých zážitků z dětského tábora,
+        který se nachází v krásném prostředí uprostřed Českého ráje v Pleskotech, v těsné blízkosti chalupy, kde trávil prázdniny
+        i Tomáš Holý ve filmu <em>Jak dostat tatínka do polepšovny</em>.
+      </p>
+      <p><strong>Volná místa:</strong> 10</p>
+      <p>
+        Přihlašovat své děti můžete, dokud jsou volná místa 🙂, nejdéle však do konce června.
+        Později pouze po telefonické domluvě.
       </p>
     </div>
+  </section>
+
+  <section id="onas" class="content-section">
+    <h2>O nás</h2>
+    <p>
+      Záleží nám na tom, aby si Vaše děti užily tábor ve vší parádě a domů si odvezly plno skvělých zážitků z dětského tábora,
+      který se nachází v krásném prostředí uprostřed Českého ráje v Pleskotech, v těsné blízkosti chalupy, kde trávil prázdniny i Tomáš Holý ve filmu <em>Jak dostat tatínka do polepšovny</em>.
+    </p>
+    <h2>Kdo jsme?</h2>
+    <p>
+      Jsme parta zodpovědných, zkušených a veselých lidí, kteří odrostli na dětských táborech a tuto štafetu plnou radostí a zážitků chceme předávat dál vašim dětem.
+      Netoužíme být moderním táborem, ale chceme děti učit poznávat přírodu, klasické tábornické nauky (táboráky, stopované, uzlování, bobříky a další),
+      zažívat netradiční sportovní aktivity a výlety plné dobrodružství.
+    </p>
+    <p>
+      O přípravu stravy pro vaše děti se stará kuchař Radek a kuchařka Léňa.
+      Zdravotní péče je zajištěna našimi skvělými zdravotnicemi – profesionálními zdravotními sestřičkami Luckou a Kristýnou.
+      O bezproblémové zázemí tábora se stará Míra, zvaný Mumuland.
+      Kvalitní program pro děti zajišťují lidé, kteří mají zkušenosti s dětskými tábory a kteří to dělají rádi.
+    </p>
+
+    <!-- Personál -->
     <div class="personnel">
-      <h2>Personál tábora</h2>
+      <h2>Personál</h2>
       <div class="personnel-list">
+        <!-- Jitka Jabůrková -->
         <div class="personnel-card">
-          <img src="images/pepa.jpg" alt="Pepa" />
+          <img src="images/jitka hlavní veoducí.jpg" alt="Jitka Jabůrková" />
           <div class="personnel-info">
-            <strong>Josef Mareš</strong>
+            <strong>Jitka Jabůrková</strong>
+            <span><em>Kája, Koudelková</em></span>
             <span>Hlavní vedoucí</span>
-            <em>Telefon: +420 774 330 201<br>Email: josef.mares@seznam.cz</em>
+            <span>Zdravotník</span>
           </div>
         </div>
+        <!-- Miloš Kratochvíl -->
         <div class="personnel-card">
-          <img src="images/marek.jpg" alt="Marek" />
+          <img src="images/miloš oddílak.jpg" alt="Miloš Kratochvíl" />
           <div class="personnel-info">
-            <strong>Marek Drápal</strong>
-            <span>Zástupce vedoucího</span>
-            <em>Telefon: +420 777 130 129<br>Email: marek.drapal@gmail.com</em>
+            <strong>Miloš Kratochvíl</strong>
+            <span><em>Koudelka</em></span>
+            <span>Oddílák – 2. oddíl</span>
           </div>
         </div>
+        <!-- Světlana Škorpilová -->
         <div class="personnel-card">
-          <img src="images/radek.jpg" alt="Radek Špejzl" />
+          <img src="images/svetlanka zastupce hl vednoucí.jpg" alt="Světlana Škorpilová" />
+          <div class="personnel-info">
+            <strong>Světlana Škorpilová</strong>
+            <span><em>Světluška</em></span>
+            <span>Oddílák – 3. oddíl</span>
+            <span>Zástupce HV</span>
+          </div>
+        </div>
+        <!-- Jan Frýba -->
+        <div class="personnel-card">
+          <img src="images/jan frýba oddílak.jpg" alt="Jan Frýba" />
+          <div class="personnel-info">
+            <strong>Jan Frýba</strong>
+            <span><em>Čiko</em></span>
+            <span>Oddílák – 4. oddíl</span>
+          </div>
+        </div>
+        <!-- Filip Adam -->
+        <div class="personnel-card">
+          <img src="images/filip oddílak.jpg" alt="Filip Adam" />
+          <div class="personnel-info">
+            <strong>Filip Adam</strong>
+            <span>Oddílák – 5. oddíl</span>
+          </div>
+        </div>
+        <!-- Laura Bruchanová -->
+        <div class="personnel-card">
+          <img src="images/laura oddílak.jpg" alt="Laura Bruchanová" />
+          <div class="personnel-info">
+            <strong>Laura Bruchanová</strong>
+            <span>Oddílák – 1. oddíl</span>
+          </div>
+        </div>
+        <!-- Natálie Kratochvílová -->
+        <div class="personnel-card">
+          <img src="images/naty praktikant.jpg" alt="Natálie Kratochvílová" />
+          <div class="personnel-info">
+            <strong>Natálie Kratochvílová</strong>
+            <span>Praktikant – 2. oddíl</span>
+          </div>
+        </div>
+        <!-- Zuzana Čepičková -->
+        <div class="personnel-card">
+          <img src="images/zuzana praktitkan.jpg" alt="Zuzana Čepičková" />
+          <div class="personnel-info">
+            <strong>Zuzana Čepičková</strong>
+            <span>Praktikant – 1. oddíl</span>
+          </div>
+        </div>
+        <!-- Matyáš Růžička -->
+        <div class="personnel-card">
+          <img src="images/maty praktikant.jpg" alt="Matyáš Růžička" />
+          <div class="personnel-info">
+            <strong>Matyáš Růžička</strong>
+            <span>Praktikant – 4. oddíl</span>
+          </div>
+        </div>
+        <!-- Ondřej Ladnar -->
+        <div class="personnel-card">
+          <img src="images/ondra ladnar.jpg" alt="Ondřej Ladnar" />
+          <div class="personnel-info">
+            <strong>Ondřej Ladnar</strong>
+            <span>Ferda Mravenec</span>
+          </div>
+        </div>
+        <!-- Marie Růžičková -->
+        <div class="personnel-card">
+          <img src="images/marie praktikant.jpg" alt="Marie Růžičková" />
+          <div class="personnel-info">
+            <strong>Marie Růžičková</strong>
+            <span><em>Mažu</em></span>
+            <span>Praktikant – 5. oddíl</span>
+          </div>
+        </div>
+        <!-- Kryštof Škorpil -->
+        <div class="personnel-card">
+          <img src="images/kryštof praktikant.jpg" alt="Kryštof Škorpil" />
+          <div class="personnel-info">
+            <strong>Kryštof Škorpil</strong>
+            <span><em>Tůta</em></span>
+            <span>Praktikant – 3. oddíl</span>
+          </div>
+        </div>
+        <!-- Lenka Kremličková -->
+        <div class="personnel-card">
+          <img src="images/lenička kuchařka.jpg" alt="Lenka Kremličková" />
+          <div class="personnel-info">
+            <strong>Lenka Kremličková</strong>
+            <span><em>Naše Lenička</em></span>
+            <span>Kuchařka</span>
+          </div>
+        </div>
+        <!-- Radek Špejzl -->
+        <div class="personnel-card">
+          <img src="images/.gitkeep" alt="Radek Špejzl" style="display:none;" />
           <div class="personnel-info">
             <strong>Radek Špejzl</strong>
-            <span>Instruktor, technika</span>
-            <em>Telefon: +420 732 140 937<br>Email: radek.spejzl@seznam.cz</em>
+            <span><em>Vařečka</em></span>
+            <span>Kuchař</span>
+          </div>
+        </div>
+        <!-- Lucie Hybnerová -->
+        <div class="personnel-card">
+          <img src="images/luca zdravotník.jpg" alt="Lucie Hybnerová" />
+          <div class="personnel-info">
+            <strong>Lucie Hybnerová</strong>
+            <span><em>Božík</em></span>
+            <span>Zdravotník</span>
           </div>
         </div>
       </div>
     </div>
+
   </section>
 
-  <!-- O nás -->
-  <section id="onas" class="content-section">
-    <h2>O nás</h2>
-    <p>
-      Jsme skupina nadšených táborových vedoucích s dlouholetou praxí v práci s dětmi a mládeží. Naším cílem je vytvořit bezpečné a zábavné prostředí, kde si děti odpočinou a zároveň zažijí spoustu dobrodružství.
-    </p>
-  </section>
+  <!-- Další sekce podle potřeby ... -->
 
-  <!-- Přihláška -->
-  <section id="prihlaska" class="content-section">
-    <h2>Přihláška na tábor</h2>
-    <form id="prihlaskaForm">
-      <label for="jmeno">Jméno a příjmení dítěte</label>
-      <input type="text" id="jmeno" name="jmeno" required />
-
-      <label for="vek">Věk dítěte</label>
-      <input type="number" id="vek" name="vek" min="6" max="15" required />
-
-      <label for="rodic">Jméno rodiče / zákonného zástupce</label>
-      <input type="text" id="rodic" name="rodic" required />
-
-      <label for="telefon">Telefonní číslo</label>
-      <input type="tel" id="telefon" name="telefon" required pattern="[+0-9\s\-]{7,15}" />
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="poznamky">Poznámky (alergie, zdravotní omezení apod.)</label>
-      <textarea id="poznamky" name="poznamky" rows="4"></textarea>
-
-      <button type="submit">Odeslat přihlášku</button>
-    </form>
-  </section>
-
-  <!-- Důležité informace -->
-  <section id="dulezite" class="content-section">
-    <h2>Důležité informace</h2>
-    <p>Tábor se koná v termínu 10. 7. – 17. 7. 2025 v Českém ráji.</p>
-    <p>Děti budou ubytovány ve zděných chatkách, strava je zajištěna 5x denně.</p>
-    <p>Prosíme, označte věci dítěte jménem a balte vhodné oblečení podle počasí.</p>
-  </section>
-
-  <!-- Program -->
-  <section id="program" class="content-section">
-    <h2>Program a jídelníček</h2>
-    <p>
-      Každý den začíná rozcvičkou a snídaní, následují dopolední a odpolední aktivity jako sportovní hry, výlety, tvoření a soutěže.
-      Večer pořádáme táborák, promítání filmů nebo diskotéku.
-    </p>
-    <p><strong>Jídelníček:</strong> Snídaně, svačina, oběd, odpolední svačina a večeře. Vše včetně možností pro děti s alergiemi.</p>
-  </section>
-
-  <!-- Fotogalerie -->
-  <section id="fotogalerie" class="content-section">
-    <h2>Fotogalerie</h2>
-    <p>Fotky z našich předchozích táborů najdete na našem <a href="https://www.facebook.com/pleskotacek" target="_blank" rel="noopener">Facebooku</a>.</p>
-  </section>
-
-  <!-- Kontakt -->
-  <section id="kontakt" class="content-section">
-    <h2>Kontakt</h2>
-    <p>Máte dotazy? Napište nám na <a href="mailto:info@pleskotacek.cz">info@pleskotacek.cz</a> nebo zavolejte na +420 774 330 201.</p>
-  </section>
-
-  <!-- Reference -->
-  <section id="reference" class="content-section">
-    <h2>Reference</h2>
-    <p>
-      „Na táboře se nám moc líbilo, děti se vracely nadšené a plné zážitků!“ – Jana Nováková<br/>
-      „Personál je skvělý, vždy ochotný a děti jsou v dobrých rukou.“ – Petr Dvořák
-    </p>
-  </section>
-
-  <!-- Sponzoři -->
-  <section id="sponzori" class="content-section">
-    <h2>Sponzoři</h2>
-    <p>
-      Děkujeme našim sponzorům, kteří nám pomáhají zajišťovat tábor:<br/>
-      - Obec Český ráj<br/>
-      - Firma XYZ s.r.o.<br/>
-      - Restaurace U Zeleného stromu
-    </p>
-  </section>
 </main>
 
 <footer>
-  &copy; 2025 Pleskotaček &mdash; Všechna práva vyhrazena
+  &copy; 2025 Pleskotaček – Všechna práva vyhrazena
 </footer>
 
 <script>
-  // Menu aktivní sekce
   const menuItems = document.querySelectorAll('nav div');
-  const sections = document.querySelectorAll('section.content-section');
-  const banner = document.getElementById('banner');
-
+  const sections = document.querySelectorAll('.content-section');
   menuItems.forEach(item => {
     item.addEventListener('click', () => {
-      // Odstranit aktivní třídu z menu i sekcí
+      // odstraní aktivní třídu všem položkám menu a sekcím
       menuItems.forEach(i => i.classList.remove('active'));
       sections.forEach(s => s.classList.remove('active'));
 
-      // Přidat aktivní třídu na vybraný prvek
+      // přidá aktivní třídu kliknutému menu a odpovídající sekci
       item.classList.add('active');
-      const target = item.dataset.target;
-      const section = document.getElementById(target);
-      if (section) section.classList.add('active');
-
-      // Měníme banner podle sekce
-      switch(target) {
-        case 'uvod':
-          banner.src = 'images/celztaborfotka.jpg';
-          banner.alt = 'Táborový banner';
-          break;
-        case 'onas':
-          banner.src = 'images/onas.jpg';
-          banner.alt = 'O nás';
-          break;
-        case 'prihlaska':
-          banner.src = 'images/prihlaska.jpg';
-          banner.alt = 'Přihláška';
-          break;
-        case 'dulezite':
-          banner.src = 'images/informace.jpg';
-          banner.alt = 'Důležité informace';
-          break;
-        case 'program':
-          banner.src = 'images/program.jpg';
-          banner.alt = 'Program a jídelníček';
-          break;
-        case 'fotogalerie':
-          banner.src = 'images/fotogalerie.jpg';
-          banner.alt = 'Fotogalerie';
-          break;
-        case 'kontakt':
-          banner.src = 'images/kontakt.jpg';
-          banner.alt = 'Kontakt';
-          break;
-        case 'reference':
-          banner.src = 'images/reference.jpg';
-          banner.alt = 'Reference';
-          break;
-        case 'sponzori':
-          banner.src = 'images/sponzori.jpg';
-          banner.alt = 'Sponzoři';
-          break;
-        default:
-          banner.src = 'images/celztaborfotka.jpg';
-          banner.alt = 'Táborový banner';
-      }
-      window.scrollTo({top: 0, behavior: 'smooth'});
+      const target = item.getAttribute('data-target');
+      document.getElementById(target).classList.add('active');
     });
-  });
-
-  // Jednoduchá validace a odeslání formuláře přihlášky (bez backendu)
-  const form = document.getElementById('prihlaskaForm');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Děkujeme za přihlášku! Brzy vás budeme kontaktovat.');
-    form.reset();
   });
 </script>
 
