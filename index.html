@@ -3,136 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dětský tábor Pleskoťáček</title>
+  <title>Pleskotaček</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.png" type="image/png" />
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #F9F6EF;
-      color: #4B3B2B;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #2E4A1F;
+      line-height: 1.6;
+      padding-top: 60px;
     }
     header {
-      background: #F5F1E9;
-      padding: 0.5rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #E0E0D8;
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 10;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: #7BB661;
-      font-family: 'Courier New', Courier, monospace;
-      letter-spacing: 1px;
-      cursor: default;
-    }
-    nav#menu {
+      left: 0;
+      right: 0;
+      background: #F5F1E9;
+      box-shadow: 0 2px 5px rgba(46, 74, 31, 0.15);
+      height: 60px;
       display: flex;
-      gap: 0.9rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: #6B7B53;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      z-index: 1000;
+    }
+    header .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #2E4A1F;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       user-select: none;
     }
-    nav#menu div {
-      padding: 0.4rem 0.7rem;
-      border-radius: 4px;
+    nav {
+      display: flex;
+      gap: 1.2rem;
+      font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
-    nav#menu div.active,
-    nav#menu div:hover {
+    nav div {
+      color: #4B3B2B;
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      white-space: nowrap;
+      user-select: none;
+    }
+    nav div:hover,
+    nav div.active {
       background-color: #7BB661;
-      color: #F5F1E9;
+      color: #fff;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+      position: relative;
     }
     .banner {
       width: 100%;
-      max-height: 350px;
+      height: 800px;
       object-fit: cover;
+      object-position: center 60%;
       display: block;
-      margin: 0 auto;
-      border-bottom: 6px solid #7BB661;
-    }
-    main {
-      max-width: 960px;
-      margin: 1.5rem auto;
-      padding: 0 1rem;
-    }
-    h1, h2 {
-      color: #2E4A1F;
-      font-weight: 700;
-      margin-bottom: 0.6rem;
-      font-family: 'Georgia', serif;
-    }
-    h1 {
-      font-size: 2.3rem;
-    }
-    h2 {
-      font-size: 1.8rem;
-      border-bottom: 3px solid #7BB661;
-      padding-bottom: 0.3rem;
-      margin-top: 2rem;
-    }
-    p {
-      line-height: 1.5;
-      margin-bottom: 1rem;
-      font-size: 1rem;
+      border-radius: 0;
     }
     .intro-box {
-      background: #E9F0E3;
-      padding: 1.2rem 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 0 8px #B9C8A7;
-      color: #4B3B2B;
+      position: relative;
+      max-width: 900px;
+      margin-top: 2rem;
+      padding: 2rem 1rem;
+      background: #fff;
+      color: #2E4A1F;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      text-align: left;
+      box-shadow: none;
+      border: none;
+      margin-left: 0 !important;
+      width: 900px;
+      left: 0;
+      position: relative;
     }
-    strong {
+    .intro-box h1 {
+      margin-bottom: 1rem;
+      color: #2E4A1F;
       font-weight: 700;
-      color: #3B5323;
     }
-    em {
-      font-style: italic;
-      color: #6B7B53;
-    }
-    .content-section {
+    section.content-section {
+      margin-bottom: 4rem;
       display: none;
+      max-width: 900px;
+      padding: 0 1rem;
     }
-    .content-section.active {
+    section.content-section.active {
       display: block;
+      animation: fadeIn 0.4s ease forwards;
     }
-    /* Personál */
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    section.content-section p {
+      font-size: 1.1rem;
+      color: #4B3B2B;
+      margin-bottom: 1rem;
+    }
+    section.content-section h2 {
+      color: #2E4A1F;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+    /* Personál styl */
+    .personnel {
+      margin-top: 3rem;
+    }
+    .personnel h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #2E4A1F;
+      border-bottom: 3px solid #7BB661;
+      padding-bottom: 0.3rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
     .personnel-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1rem;
+      gap: 2rem;
     }
     .personnel-card {
-      background: #F5F8EF;
-      border: 1px solid #B9C8A7;
+      flex: 1 1 280px;
+      background: #F5F1E9;
       border-radius: 8px;
-      flex: 1 1 calc(33.333% - 1rem);
-      box-shadow: 0 2px 5px rgba(75,75,75,0.1);
+      box-shadow: 0 0 10px rgba(46, 74, 31, 0.1);
       display: flex;
-      flex-direction: column;
+      padding: 1rem;
       align-items: center;
-      padding: 1rem 1rem 1.5rem;
-      transition: transform 0.3s ease;
-    }
-    .personnel-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(75,75,75,0.2);
+      gap: 1rem;
+      color: #2E4A1F;
+      min-width: 280px;
     }
     .personnel-card img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
       object-fit: cover;
-      border: 3px solid #7BB661;
-      margin-bottom: 0.9rem;
+      flex-shrink: 0;
+      border: 2px solid #7BB661;
+    }
+    .personnel-info {
+      flex-grow: 1;
+      font-size: 1rem;
+      line-height: 1.3;
     }
     .personnel-info strong {
       font-weight: 700;
@@ -150,7 +180,6 @@
     .personnel-info em {
       color: #6B7B53;
       font-style: normal;
-      text-align: center;
     }
     footer {
       background: #F5F1E9;
@@ -161,29 +190,13 @@
       font-weight: 600;
       letter-spacing: 1px;
       border-top: 1px solid #E0E0D8;
-      margin-top: 2rem;
-    }
-    @media (max-width: 900px) {
-      .personnel-card {
-        flex: 1 1 calc(50% - 1rem);
-      }
     }
     @media (max-width: 600px) {
-      nav#menu {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
       .personnel-list {
         flex-direction: column;
       }
       .personnel-card {
         flex: 1 1 100%;
-      }
-      h1 {
-        font-size: 1.8rem;
-      }
-      h2 {
-        font-size: 1.4rem;
       }
     }
   </style>
@@ -193,9 +206,8 @@
 <header>
   <div class="logo">Pleskotaček</div>
   <nav id="menu">
-    <div data-target="uvod" class="active">Úvod</div>
+    <div data-target="uvod">Úvod</div>
     <div data-target="onas">O nás</div>
-    <div data-target="personnel">Personál</div>
     <div data-target="prihlaska">Přihláška</div>
     <div data-target="dulezite">Důležité informace</div>
     <div data-target="program">Program a jídelníček</div>
@@ -241,118 +253,177 @@
     <h2>Kdo jsme?</h2>
     <p>
       Jsme parta zodpovědných, zkušených a veselých lidí, kteří odrostli na dětských táborech a tuto štafetu plnou radostí a zážitků chceme předávat dál vašim dětem.
-      Netoužíme být moderním táborem, ale chceme děti učit poznávat přírodu, klasické tábornické nauky (táboráky, stopované, uzlování, bobříky a výzvy).
-      Důležitá je pro nás také výborná a zdravá kuchyně, která je základem dobrého tábora.
+      Netoužíme být moderním táborem, ale chceme děti učit poznávat přírodu, klasické tábornické nauky (táboráky, stopované, uzlování, bobříky a další),
+      zažívat netradiční sportovní aktivity a výlety plné dobrodružství.
     </p>
-  </section>
+    <p>
+      O přípravu stravy pro vaše děti se stará kuchař Radek a kuchařka Léňa.
+      Zdravotní péče je zajištěna našimi skvělými zdravotnicemi – profesionálními zdravotními sestřičkami Luckou a Kristýnou.
+      O bezproblémové zázemí tábora se stará Míra, zvaný Mumuland.
+      Kvalitní program pro děti zajišťují lidé, kteří mají zkušenosti s dětskými tábory a kteří to dělají rádi.
+    </p>
 
-  <section id="personnel" class="content-section">
-    <h2>Personál</h2>
-    <div class="personnel-list">
-      <div class="personnel-card">
-        <img src="images/kristina.jpg" alt="Kristina - Zdravotník" />
-        <div class="personnel-info">
-          <strong>Kristina</strong>
-          <span>Zdravotník</span>
-          <em>O naše zdraví se postará s úsměvem a zkušenostmi.</em>
+    <!-- Personál -->
+    <div class="personnel">
+      <h2>Personál</h2>
+      <div class="personnel-list">
+        <!-- Jitka Jabůrková -->
+        <div class="personnel-card">
+          <img src="images/jitka hlavní veoducí.jpg" alt="Jitka Jabůrková" />
+          <div class="personnel-info">
+            <strong>Jitka Jabůrková</strong>
+            <span><em>Kája, Koudelková</em></span>
+            <span>Hlavní vedoucí</span>
+            <span>Zdravotník</span>
+          </div>
         </div>
-      </div>
-      <div class="personnel-card">
-        <img src="images/zuzu.jpg" alt="Zuzu - Praktikantka" />
-        <div class="personnel-info">
-          <strong>Zuzu</strong>
-          <span>Praktikantka</span>
-          <em>Pomáhá u táborových aktivit a stará se o dobrou náladu.</em>
+        <!-- Miloš Kratochvíl -->
+        <div class="personnel-card">
+          <img src="images/miloš oddílak.jpg" alt="Miloš Kratochvíl" />
+          <div class="personnel-info">
+            <strong>Miloš Kratochvíl</strong>
+            <span><em>Koudelka</em></span>
+            <span>Oddílák – 2. oddíl</span>
+          </div>
         </div>
-      </div>
-      <div class="personnel-card">
-        <img src="images/jana.jpg" alt="Jana - Praktikantka" />
-        <div class="personnel-info">
-          <strong>Jana</strong>
-          <span>Praktikantka</span>
-          <em>Podporuje tým a pomáhá s organizací her a soutěží.</em>
+        <!-- Světlana Škorpilová -->
+        <div class="personnel-card">
+          <img src="images/svetlanka zastupce hl vednoucí.jpg" alt="Světlana Škorpilová" />
+          <div class="personnel-info">
+            <strong>Světlana Škorpilová</strong>
+            <span><em>Světluška</em></span>
+            <span>Oddílák – 3. oddíl</span>
+            <span>Zástupce HV</span>
+          </div>
         </div>
-      </div>
-      <div class="personnel-card">
-        <img src="images/maty.jpg" alt="Maty - Praktikant" />
-        <div class="personnel-info">
-          <strong>Maty</strong>
-          <span>Praktikant</span>
-          <em>Stará se o bezpečnost a zábavu dětí.</em>
+        <!-- Jan Frýba -->
+        <div class="personnel-card">
+          <img src="images/jan frýba oddílak.jpg" alt="Jan Frýba" />
+          <div class="personnel-info">
+            <strong>Jan Frýba</strong>
+            <span><em>Čiko</em></span>
+            <span>Oddílák – 4. oddíl</span>
+          </div>
         </div>
-      </div>
-      <div class="personnel-card">
-        <img src="images/mari.jpg" alt="Mari - Praktikantka" />
-        <div class="personnel-info">
-          <strong>Mari</strong>
-          <span>Praktikantka</span>
-          <em>Pomáhá s každodenními táborovými úkoly a dětmi.</em>
+        <!-- Filip Adam -->
+        <div class="personnel-card">
+          <img src="images/filip oddílak.jpg" alt="Filip Adam" />
+          <div class="personnel-info">
+            <strong>Filip Adam</strong>
+            <span>Oddílák – 5. oddíl</span>
+          </div>
         </div>
-      </div>
-      <div class="personnel-card">
-        <img src="images/ochranka.jpg" alt="Ochranka" />
-        <div class="personnel-info">
-          <strong>Ochranka</strong>
-          <span>Bezpečnostní služba</span>
-          <em>Dbá na pořádek a bezpečnost v táboře.</em>
+        <!-- Laura Bruchanová -->
+        <div class="personnel-card">
+          <img src="images/laura oddílak.jpg" alt="Laura Bruchanová" />
+          <div class="personnel-info">
+            <strong>Laura Bruchanová</strong>
+            <span>Oddílák – 1. oddíl</span>
+          </div>
+        </div>
+        <!-- Natálie Kratochvílová -->
+        <div class="personnel-card">
+          <img src="images/naty praktikant.jpg" alt="Natálie Kratochvílová" />
+          <div class="personnel-info">
+            <strong>Natálie Kratochvílová</strong>
+            <span>Praktikant – 2. oddíl</span>
+          </div>
+        </div>
+        <!-- Zuzana Čepičková -->
+        <div class="personnel-card">
+          <img src="images/zuzana praktitkan.jpg" alt="Zuzana Čepičková" />
+          <div class="personnel-info">
+            <strong>Zuzana Čepičková</strong>
+            <span>Praktikant – 1. oddíl</span>
+          </div>
+        </div>
+        <!-- Matyáš Růžička -->
+        <div class="personnel-card">
+          <img src="images/maty praktikant.jpg" alt="Matyáš Růžička" />
+          <div class="personnel-info">
+            <strong>Matyáš Růžička</strong>
+            <span>Praktikant – 4. oddíl</span>
+          </div>
+        </div>
+        <!-- Ondřej Ladnar -->
+        <div class="personnel-card">
+          <img src="images/ondra ladnar.jpg" alt="Ondřej Ladnar" />
+          <div class="personnel-info">
+            <strong>Ondřej Ladnar</strong>
+            <span>Ferda Mravenec</span>
+          </div>
+        </div>
+        <!-- Marie Růžičková -->
+        <div class="personnel-card">
+          <img src="images/marie praktikant.jpg" alt="Marie Růžičková" />
+          <div class="personnel-info">
+            <strong>Marie Růžičková</strong>
+            <span><em>Mažu</em></span>
+            <span>Praktikant – 5. oddíl</span>
+          </div>
+        </div>
+        <!-- Kryštof Škorpil -->
+        <div class="personnel-card">
+          <img src="images/kryštof praktikant.jpg" alt="Kryštof Škorpil" />
+          <div class="personnel-info">
+            <strong>Kryštof Škorpil</strong>
+            <span><em>Tůta</em></span>
+            <span>Praktikant – 3. oddíl</span>
+          </div>
+        </div>
+        <!-- Lenka Kremličková -->
+        <div class="personnel-card">
+          <img src="images/lenička kuchařka.jpg" alt="Lenka Kremličková" />
+          <div class="personnel-info">
+            <strong>Lenka Kremličková</strong>
+            <span><em>Naše Lenička</em></span>
+            <span>Kuchařka</span>
+          </div>
+        </div>
+        <!-- Radek Špejzl -->
+        <div class="personnel-card">
+          <img src="images/.gitkeep" alt="Radek Špejzl" style="display:none;" />
+          <div class="personnel-info">
+            <strong>Radek Špejzl</strong>
+            <span><em>Vařečka</em></span>
+            <span>Kuchař</span>
+          </div>
+        </div>
+        <!-- Lucie Hybnerová -->
+        <div class="personnel-card">
+          <img src="images/luca zdravotník.jpg" alt="Lucie Hybnerová" />
+          <div class="personnel-info">
+            <strong>Lucie Hybnerová</strong>
+            <span><em>Božík</em></span>
+            <span>Zdravotník</span>
+          </div>
         </div>
       </div>
     </div>
-    <p style="margin-top: 2rem; font-style: italic; color: #6B7B53;">
-      Informace a ofky budeme průběžně doplňovat.
-    </p>
+
   </section>
 
-  <section id="prihlaska" class="content-section">
-    <h2>Přihláška</h2>
-    <p>Text přihlášky bude zde.</p>
-  </section>
+  <!-- Další sekce podle potřeby ... -->
 
-  <section id="dulezite" class="content-section">
-    <h2>Důležité informace</h2>
-    <p>Text důležitých informací bude zde.</p>
-  </section>
-
-  <section id="program" class="content-section">
-    <h2>Program a jídelníček</h2>
-    <p>Text programu a jídelníčku bude zde.</p>
-  </section>
-
-  <section id="fotogalerie" class="content-section">
-    <h2>Fotogalerie</h2>
-    <p>Fotky budou zde.</p>
-  </section>
-
-  <section id="kontakt" class="content-section">
-    <h2>Kontakt</h2>
-    <p>Kontaktní informace budou zde.</p>
-  </section>
-
-  <section id="reference" class="content-section">
-    <h2>Reference</h2>
-    <p>Reference budou zde.</p>
-  </section>
-
-  <section id="sponzori" class="content-section">
-    <h2>Sponzoři</h2>
-    <p>Informace o sponzorech budou zde.</p>
-  </section>
 </main>
 
 <footer>
-  &copy; 2025 Dětský tábor Pleskoťáček - Všechna práva vyhrazena
+  &copy; 2025 Pleskotaček – Všechna práva vyhrazena
 </footer>
 
 <script>
-  // Jednoduchá navigace mezi sekcemi
-  const menuItems = document.querySelectorAll('#menu div');
+  const menuItems = document.querySelectorAll('nav div');
   const sections = document.querySelectorAll('.content-section');
   menuItems.forEach(item => {
     item.addEventListener('click', () => {
+      // odstraní aktivní třídu všem položkám menu a sekcím
       menuItems.forEach(i => i.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+
+      // přidá aktivní třídu kliknutému menu a odpovídající sekci
       item.classList.add('active');
-      sections.forEach(sec => sec.classList.remove('active'));
-      document.getElementById(item.dataset.target).classList.add('active');
+      const target = item.getAttribute('data-target');
+      document.getElementById(target).classList.add('active');
     });
   });
 </script>
