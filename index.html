@@ -70,7 +70,7 @@
       height: 420px; /* pevná výška jako původně */
       object-fit: cover;
       object-position: center 35%;
-      display: none;
+      display: block; /* Zobrazit banner při načtení */
       border-radius: 0;
     }
     /* Text pod bannerem s rámečkem */
@@ -131,7 +131,7 @@
 <header>
   <div class="logo">Pleskotaček</div>
   <nav id="menu">
-    <div data-target="uvod">Úvod</div>
+    <div data-target="uvod" class="active">Úvod</div>
     <div data-target="onas">O nás</div>
     <div data-target="prihlaska">Přihláška</div>
     <div data-target="dulezite">Důležité informace</div>
@@ -147,7 +147,7 @@
 <img id="banner" class="banner" src="images/celztaborfotka.jpg" alt="Táborový banner" />
 
 <main>
-  <section id="uvod" class="content-section">
+  <section id="uvod" class="content-section active">
     <div class="intro-box">
       <h1>Dětský tábor Pleskoťáček 🙂</h1>
       <p>
@@ -218,7 +218,7 @@
     document.getElementById(id).classList.add('active');
     document.querySelector(`#menu div[data-target="${id}"]`).classList.add('active');
 
-    // Banner jen u úvodu
+    // Banner viditelný pouze u úvodu
     if (id === 'uvod') {
       banner.style.display = 'block';
     } else {
@@ -235,7 +235,7 @@
     });
   });
 
-  // Načtení úvodu při startu
+  // Při načtení zobraz úvod a banner
   showSection('uvod');
 </script>
 
