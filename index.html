@@ -67,36 +67,30 @@
     }
     .banner {
       width: 100%;
-      height: 420px; /* pevná výška jako původně */
+      height: 600px; /* zvětšená výška banneru */
       object-fit: cover;
-      object-position: center 35%;
-      display: block; /* Zobrazit banner při načtení */
+      object-position: center 35%; /* posun pro lepší výřez */
+      display: block;
       border-radius: 0;
     }
-    /* Text pod bannerem s rámečkem */
+    /* Text pod bannerem - bílé pozadí, zarovnaný doleva */
     .intro-box {
-      margin-top: 1.5rem; /* dostatečný odstup od banneru */
-      padding: 1.5rem 2rem;
-      background: #fffbe6; /* jemné žluté pozadí */
-      border: 2px solid #f0d96f; /* žlutý rámeček */
-      border-radius: 10px;
+      margin-top: 2rem; /* více prostoru od banneru */
+      padding: 2rem 0 2rem 0; /* horní a dolní padding, bez horizontálního */
+      background: #fff; /* čistě bílé pozadí */
+      color: #2E4A1F;
       font-size: 1.15rem;
       line-height: 1.7;
-      color: #2E4A1F; /* tmavší text */
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: 0; /* zarovnání úplně vlevo */
       text-align: left;
-      box-shadow: 0 3px 12px rgba(240, 217, 111, 0.3);
+      box-shadow: none;
+      border: none;
     }
     .intro-box h1 {
-      font-size: 2rem;
       margin-bottom: 1rem;
       color: #2E4A1F;
       font-weight: 700;
-    }
-    .intro-box p {
-      margin-bottom: 1rem;
     }
     section.content-section {
       margin-bottom: 4rem;
@@ -131,7 +125,7 @@
 <header>
   <div class="logo">Pleskotaček</div>
   <nav id="menu">
-    <div data-target="uvod" class="active">Úvod</div>
+    <div data-target="uvod">Úvod</div>
     <div data-target="onas">O nás</div>
     <div data-target="prihlaska">Přihláška</div>
     <div data-target="dulezite">Důležité informace</div>
@@ -218,7 +212,7 @@
     document.getElementById(id).classList.add('active');
     document.querySelector(`#menu div[data-target="${id}"]`).classList.add('active');
 
-    // Banner viditelný pouze u úvodu
+    // Banner jen u úvodu
     if (id === 'uvod') {
       banner.style.display = 'block';
     } else {
@@ -235,7 +229,7 @@
     });
   });
 
-  // Při načtení zobraz úvod a banner
+  // Načtení úvodu při startu
   showSection('uvod');
 </script>
 
