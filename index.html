@@ -68,26 +68,24 @@
     }
     .banner {
       width: 100%;
-      height: 800px; /* zvýšená výška banneru na 800px */
+      height: 800px;
       object-fit: cover;
-      object-position: center 60%; /* posun výřezu dolů */
+      object-position: center 60%;
       display: block;
       border-radius: 0;
     }
-    /* Text pod bannerem - bílé pozadí, zarovnaný úplně doleva k levému okraji okna */
     .intro-box {
       position: relative;
       max-width: 900px;
-      margin-top: 2rem; /* více prostoru od banneru */
-      padding: 2rem 1rem 2rem 1rem; /* horní a dolní padding, s trochou horizontálního */
-      background: #fff; /* čistě bílé pozadí */
+      margin-top: 2rem;
+      padding: 2rem 1rem;
+      background: #fff;
       color: #2E4A1F;
       font-size: 1.15rem;
       line-height: 1.7;
       text-align: left;
       box-shadow: none;
       border: none;
-      /* posunout mimo středový main */
       margin-left: 0 !important;
       width: 900px;
       left: 0;
@@ -101,6 +99,8 @@
     section.content-section {
       margin-bottom: 4rem;
       display: none;
+      max-width: 900px;
+      padding: 0 1rem;
     }
     section.content-section.active {
       display: block;
@@ -113,6 +113,13 @@
     section.content-section p {
       font-size: 1.1rem;
       color: #4B3B2B;
+      margin-bottom: 1rem;
+    }
+    section.content-section h2 {
+      color: #2E4A1F;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.4rem;
     }
     footer {
       background: #F5F1E9;
@@ -143,7 +150,6 @@
   </nav>
 </header>
 
-<!-- Banner jen pro úvod -->
 <img id="banner" class="banner" src="images/celztaborfotka.jpg" alt="Táborový banner" />
 
 <main>
@@ -171,7 +177,22 @@
   </section>
 
   <section id="onas" class="content-section">
-    <p>Informace o nás a našem poslání.</p>
+    <h2>O nás</h2>
+    <p>
+      Záleží nám na tom, aby si Vaše děti užily tábor ve vší parádě a domů si odvezly plno skvělých zážitků z dětského tábora,
+      který se nachází v krásném prostředí uprostřed Českého ráje v Pleskotech, v těsné blízkosti chalupy, kde trávil prázdniny i Tomáš Holý ve filmu <em>Jak dostat tatínka do polepšovny</em>.
+    </p>
+    <h2>Kdo jsme?</h2>
+    <p>
+      Jsme parta zodpovědných, zkušených a veselých lidí, kteří odrostli na dětských táborech a tuto štafetu plnou radostí a zážitků chceme předávat dál vašim dětem.
+      Netoužíme být moderním táborem, ale chceme děti učit poznávat přírodu, klasické tábornické nauky (táboráky, stopované, uzlování, bobříky a další),
+      zažívat netradiční sportovní aktivity a výlety plné dobrodružství.
+    </p>
+    <p>
+      O přípravu stravy pro vaše děti se stará kuchař Radek a kuchařka Léňa. Zdravotní péče je zajištěna našimi skvělými zdravotnicemi – profesionálními zdravotními sestřičkami Luckou a Kristýnou.
+      O bezproblémové zázemí tábora se stará Míra, zvaný Mumuland.
+      Kvalitní program pro děti zajišťují lidé, kteří mají zkušenosti s dětskými tábory a kteří to dělají rádi.
+    </p>
   </section>
 
   <section id="prihlaska" class="content-section">
@@ -235,7 +256,6 @@
     });
   });
 
-  // Načtení úvodu při startu
   showSection('uvod');
 </script>
 
