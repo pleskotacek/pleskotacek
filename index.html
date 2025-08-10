@@ -64,6 +64,7 @@
       max-width: 900px;
       margin: 2rem auto 4rem;
       padding: 0 1rem;
+      position: relative;
     }
     .banner {
       width: 100%;
@@ -73,19 +74,24 @@
       display: block;
       border-radius: 0;
     }
-    /* Text pod bannerem - bílé pozadí, zarovnaný úplně doleva */
+    /* Text pod bannerem - bílé pozadí, zarovnaný úplně doleva k levému okraji okna */
     .intro-box {
+      position: relative;
+      max-width: 900px;
       margin-top: 2rem; /* více prostoru od banneru */
-      padding: 2rem 0 2rem 0; /* horní a dolní padding, bez horizontálního */
+      padding: 2rem 1rem 2rem 1rem; /* horní a dolní padding, s trochou horizontálního */
       background: #fff; /* čistě bílé pozadí */
       color: #2E4A1F;
       font-size: 1.15rem;
       line-height: 1.7;
-      max-width: 900px;
-      margin-left: 0; /* pevné zarovnání úplně doleva */
       text-align: left;
       box-shadow: none;
       border: none;
+      /* posunout mimo středový main */
+      margin-left: 0 !important;
+      width: 900px;
+      left: 0;
+      position: relative;
     }
     .intro-box h1 {
       margin-bottom: 1rem;
