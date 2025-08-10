@@ -1,3 +1,105 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pleskotaček</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #2E4A1F;
+      line-height: 1.6;
+      padding-top: 60px;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #F5F1E9;
+      box-shadow: 0 2px 5px rgba(46, 74, 31, 0.15);
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      z-index: 1000;
+    }
+    header .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #2E4A1F;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      user-select: none;
+    }
+    nav {
+      display: flex;
+      gap: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    nav div {
+      color: #4B3B2B;
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      white-space: nowrap;
+      user-select: none;
+    }
+    nav div:hover,
+    nav div.active {
+      background-color: #7BB661;
+      color: #fff;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+    .banner {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: none;
+      border-radius: 0;
+    }
+    section.content-section {
+      margin-bottom: 4rem;
+      display: none;
+    }
+    section.content-section.active {
+      display: block;
+      animation: fadeIn 0.4s ease forwards;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    section.content-section p {
+      font-size: 1.1rem;
+      color: #4B3B2B;
+    }
+    footer {
+      background: #F5F1E9;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #7BB661;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-top: 1px solid #E0E0D8;
+    }
+  </style>
+</head>
 <body>
 
 <header>
@@ -15,25 +117,45 @@
   </nav>
 </header>
 
-<!-- Banner, který je jen pro úvod -->
-<div id="banner">
-  <img src="camp.jpg" alt="Táborový banner" />
-</div>
+<!-- Banner jen pro úvod -->
+<img id="banner" class="banner" src="images/celztaborfotka.jpg" alt="Táborový banner" />
 
 <main>
   <section id="uvod" class="content-section">
-    <p>Úvodní text a informace o táboře...</p>
+    <p>Úvodní text a informace o táboře. Tady můžeš dát popis, fotky nebo novinky, které se týkají tábora.</p>
   </section>
 
   <section id="onas" class="content-section">
-    <p>Informace o nás...</p>
+    <p>Informace o nás a našem poslání.</p>
   </section>
 
   <section id="prihlaska" class="content-section">
-    <p>Formulář pro přihlášení...</p>
+    <p>Formulář a informace pro přihlášení.</p>
   </section>
 
-  <!-- ostatní sekce stejně -->
+  <section id="dulezite" class="content-section">
+    <p>Důležité informace k táboru.</p>
+  </section>
+
+  <section id="program" class="content-section">
+    <p>Program a jídelníček.</p>
+  </section>
+
+  <section id="fotogalerie" class="content-section">
+    <p>Fotogalerie z minulých ročníků.</p>
+  </section>
+
+  <section id="kontakt" class="content-section">
+    <p>Kontaktní informace.</p>
+  </section>
+
+  <section id="reference" class="content-section">
+    <p>Reference a doporučení.</p>
+  </section>
+
+  <section id="sponzori" class="content-section">
+    <p>Sponzoři a partneři.</p>
+  </section>
 </main>
 
 <footer>
@@ -45,15 +167,14 @@
   const contentSections = document.querySelectorAll('.content-section');
   const banner = document.getElementById('banner');
 
-  function showSection(targetId) {
+  function showSection(id) {
     contentSections.forEach(sec => sec.classList.remove('active'));
     menuItems.forEach(i => i.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelector(`#menu div[data-target="${id}"]`).classList.add('active');
 
-    document.getElementById(targetId).classList.add('active');
-    document.querySelector(`#menu div[data-target="${targetId}"]`).classList.add('active');
-
-    // Banner jen na úvodu
-    if (targetId === 'uvod') {
+    // Banner jen u úvodu
+    if (id === 'uvod') {
       banner.style.display = 'block';
     } else {
       banner.style.display = 'none';
@@ -69,16 +190,10 @@
     });
   });
 
-  // Ukázat úvod při načtení
+  // Načtení úvodu při startu
   showSection('uvod');
 </script>
 
-<style>
-  #banner img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-  }
-</style>
+</body>
+</html>
 
