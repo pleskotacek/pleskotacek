@@ -67,12 +67,30 @@
     }
     .banner {
       width: 100%;
-      height: 850px;           /* zvětšená výška banneru */
-      margin-top: -150px;      /* větší oříznutí nahoře */
+      max-height: 420px; /* upravená výška banneru */
       object-fit: cover;
-      object-position: center 45%;  /* posunutí objektu dolů pro oříznutí nahoře */
+      object-position: center 35%; /* posun pro lepší výřez */
       display: none;
       border-radius: 0;
+    }
+    /* Úvodní text pod bannerem */
+    .intro-box {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: #fffdf7;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #4B3B2B;
+    }
+    .intro-box h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #2E4A1F;
+    }
+    .intro-box p {
+      margin-bottom: 1rem;
     }
     section.content-section {
       margin-bottom: 4rem;
@@ -124,7 +142,26 @@
 
 <main>
   <section id="uvod" class="content-section">
-    <p>Úvodní text a informace o táboře. Tady můžeš dát popis, fotky nebo novinky, které se týkají tábora.</p>
+    <div class="intro-box">
+      <h1>Dětský tábor Pleskoťáček 🙂</h1>
+      <p>
+        Krásné prostředí Českého ráje. Zkušený, zodpovědný personál zaručí, že vaše děti u nás budou spokojené.
+        Přivezte nám své dítko do Pleskot, užít si velké prázdninové dobrodružství!
+      </p>
+      <p><strong>Termín tábora:</strong> 27. 7. – 9. 8. 2025</p>
+      <p><strong>Věk účastníků:</strong> 6 – 16 let (ročníky 2019 – 2009)</p>
+      <p><strong>Cena:</strong> 8 700 Kč</p>
+      <p>
+        Záleží nám na tom, aby si Vaše děti užily tábor ve vší parádě a domů si odvezly plno skvělých zážitků z dětského tábora,
+        který se nachází v krásném prostředí uprostřed Českého ráje v Pleskotech, v těsné blízkosti chalupy, kde trávil prázdniny
+        i Tomáš Holý ve filmu <em>Jak dostat tatínka do polepšovny</em>.
+      </p>
+      <p><strong>Volná místa:</strong> 10</p>
+      <p>
+        Přihlašovat své děti můžete, dokud jsou volná místa 🙂, nejdéle však do konce června.
+        Později pouze po telefonické domluvě.
+      </p>
+    </div>
   </section>
 
   <section id="onas" class="content-section">
