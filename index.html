@@ -1,212 +1,81 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pleskotaček</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="favicon.png" type="image/png" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #fff;
-      color: #2E4A1F;
-      line-height: 1.6;
-      padding-top: 60px;
-    }
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: #F5F1E9;
-      box-shadow: 0 2px 5px rgba(46, 74, 31, 0.15);
-      height: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2rem;
-      z-index: 1000;
-    }
-    header .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #2E4A1F;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      user-select: none;
-    }
-    nav {
-      display: flex;
-      gap: 1.2rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    nav div {
-      color: #4B3B2B;
-      padding: 0.4rem 0.6rem;
-      border-radius: 4px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      white-space: nowrap;
-      user-select: none;
-    }
-    nav div:hover,
-    nav div.active {
-      background-color: #7BB661;
-      color: #fff;
-    }
-    main {
-      max-width: 900px;
-      margin: 2rem auto 4rem;
-      padding: 0 1rem;
-      position: relative;
-    }
-    .banner {
-      width: 100%;
-      height: 800px;
-      object-fit: cover;
-      object-position: center 60%;
-      display: block;
-      border-radius: 0;
-    }
-    .intro-box {
-      position: relative;
-      max-width: 900px;
-      margin-top: 2rem;
-      padding: 2rem 1rem;
-      background: #fff;
-      color: #2E4A1F;
-      font-size: 1.15rem;
-      line-height: 1.7;
-      text-align: left;
-      box-shadow: none;
-      border: none;
-      margin-left: 0 !important;
-      width: 900px;
-      left: 0;
-      position: relative;
-    }
-    .intro-box h1 {
-      margin-bottom: 1rem;
-      color: #2E4A1F;
-      font-weight: 700;
-    }
-    section.content-section {
-      margin-bottom: 4rem;
-      display: none;
-      max-width: 900px;
-      padding: 0 1rem;
-    }
-    section.content-section.active {
-      display: block;
-      animation: fadeIn 0.4s ease forwards;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(10px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    section.content-section p {
-      font-size: 1.1rem;
-      color: #4B3B2B;
-      margin-bottom: 1rem;
-    }
-    section.content-section h2 {
-      color: #2E4A1F;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      font-size: 1.4rem;
-    }
-    /* Personál styl */
-    .personnel {
-      margin-top: 3rem;
-    }
-    .personnel h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: #2E4A1F;
-      border-bottom: 3px solid #7BB661;
-      padding-bottom: 0.3rem;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-    .personnel-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-    .personnel-card {
-      flex: 1 1 280px;
-      background: #F5F1E9;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(46, 74, 31, 0.1);
-      display: flex;
-      padding: 1rem;
-      align-items: center;
-      gap: 1rem;
-      color: #2E4A1F;
-      min-width: 280px;
-    }
-    .personnel-card img {
-      width: 100px;
-      height: 100px;
-      border-radius: 10px;
-      object-fit: cover;
-      flex-shrink: 0;
-      border: 2px solid #7BB661;
-    }
-    .personnel-info {
-      flex-grow: 1;
-      font-size: 1rem;
-      line-height: 1.3;
-    }
-    .personnel-info strong {
-      font-weight: 700;
-      font-size: 1.15rem;
-      display: block;
-      margin-bottom: 0.2rem;
-      color: #2E4A1F;
-    }
-    .personnel-info span {
-      font-weight: 600;
-      display: block;
-      margin-bottom: 0.3rem;
-      color: #4B3B2B;
-    }
-    .personnel-info em {
-      color: #6B7B53;
-      font-style: normal;
-    }
-    footer {
-      background: #F5F1E9;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #7BB661;
-      font-weight: 600;
-      letter-spacing: 1px;
-      border-top: 1px solid #E0E0D8;
-    }
-    @media (max-width: 600px) {
-      .personnel-list {
-        flex-direction: column;
-      }
-      .personnel-card {
-        flex: 1 1 100%;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pleskotaček</title>
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0; padding: 0;
+    background: #fff;
+    color: #2E4A1F;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 60px;
+  }
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #F5F1E9;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    box-shadow: 0 2px 5px rgba(46,74,31,0.15);
+    z-index: 1000;
+  }
+  header .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2E4A1F;
+    user-select: none;
+  }
+  nav {
+    margin-left: auto;
+    display: flex;
+    gap: 1.2rem;
+  }
+  nav div {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.4rem 0.7rem;
+    border-radius: 4px;
+    color: #4B3B2B;
+    user-select: none;
+    white-space: nowrap;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  nav div:hover, nav div.active {
+    background-color: #7BB661;
+    color: white;
+  }
+
+  #banner {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center 60%;
+    display: block;
+    border-radius: 0;
+    margin-bottom: 2rem;
+  }
+
+  section.content-section {
+    display: none;
+  }
+  section.content-section.active {
+    display: block;
+  }
+</style>
 </head>
 <body>
 
 <header>
   <div class="logo">Pleskotaček</div>
   <nav id="menu">
-    <div data-target="uvod">Úvod</div>
+    <div data-target="uvod" class="active">Úvod</div>
     <div data-target="onas">O nás</div>
     <div data-target="prihlaska">Přihláška</div>
     <div data-target="dulezite">Důležité informace</div>
@@ -218,212 +87,50 @@
   </nav>
 </header>
 
-<img id="banner" class="banner" src="images/celztaborfotka.jpg" alt="Táborový banner" />
+<!-- Banner viditelný jen u Úvod -->
+<img id="banner" src="celztaborfotka.jpg" alt="Banner Pleskotaček" />
 
-<main>
-  <section id="uvod" class="content-section active">
-    <div class="intro-box">
-      <h1>Dětský tábor Pleskoťáček 🙂</h1>
-      <p>
-        Krásné prostředí Českého ráje. Zkušený, zodpovědný personál zaručí, že vaše děti u nás budou spokojené.
-        Přivezte nám své dítko do Pleskot, užít si velké prázdninové dobrodružství!
-      </p>
-      <p><strong>Termín tábora:</strong> 27. 7. – 9. 8. 2025</p>
-      <p><strong>Věk účastníků:</strong> 6 – 16 let (ročníky 2019 – 2009)</p>
-      <p><strong>Cena:</strong> 8 700 Kč</p>
-      <p>
-        Záleží nám na tom, aby si Vaše děti užily tábor ve vší parádě a domů si odvezly plno skvělých zážitků z dětského tábora,
-        který se nachází v krásném prostředí uprostřed Českého ráje v Pleskotech, v těsné blízkosti chalupy, kde trávil prázdniny
-        i Tomáš Holý ve filmu <em>Jak dostat tatínka do polepšovny</em>.
-      </p>
-      <p><strong>Volná místa:</strong> 10</p>
-      <p>
-        Přihlašovat své děti můžete, dokud jsou volná místa 🙂, nejdéle však do konce června.
-        Později pouze po telefonické domluvě.
-      </p>
-    </div>
-  </section>
+<!-- Sekce -->
+<section id="uvod" class="content-section active">
+  <h1>Úvod</h1>
+  <p>Vítejte na stránkách našeho dětského tábora...</p>
+</section>
 
-  <section id="onas" class="content-section">
-    <h2>O nás</h2>
-    <p>
-      Záleží nám na tom, aby si Vaše děti užily tábor ve vší parádě a domů si odvezly plno skvělých zážitků z dětského tábora,
-      který se nachází v krásném prostředí uprostřed Českého ráje v Pleskotech, v těsné blízkosti chalupy, kde trávil prázdniny i Tomáš Holý ve filmu <em>Jak dostat tatínka do polepšovny</em>.
-    </p>
-    <h2>Kdo jsme?</h2>
-    <p>
-      Jsme parta zodpovědných, zkušených a veselých lidí, kteří odrostli na dětských táborech a tuto štafetu plnou radostí a zážitků chceme předávat dál vašim dětem.
-      Netoužíme být moderním táborem, ale chceme děti učit poznávat přírodu, klasické tábornické nauky (táboráky, stopované, uzlování, bobříky a další),
-      zažívat netradiční sportovní aktivity a výlety plné dobrodružství.
-    </p>
-    <p>
-      O přípravu stravy pro vaše děti se stará kuchař Radek a kuchařka Léňa.
-      Zdravotní péče je zajištěna našimi skvělými zdravotnicemi – profesionálními zdravotními sestřičkami Luckou a Kristýnou.
-      O bezproblémové zázemí tábora se stará Míra, zvaný Mumuland.
-      Kvalitní program pro děti zajišťují lidé, kteří mají zkušenosti s dětskými tábory a kteří to dělají rádi.
-    </p>
+<section id="onas" class="content-section">
+  <h1>O nás</h1>
+  <p>Záleží nám na tom, aby si Vaše děti užily tábor ve vší parádě ...</p>
+  <!-- další obsah... -->
+</section>
 
-    <!-- Personál -->
-    <div class="personnel">
-      <h2>Personál</h2>
-      <div class="personnel-list">
-        <!-- Jitka Jabůrková -->
-        <div class="personnel-card">
-          <img src="images/jitka hlavní veoducí.jpg" alt="Jitka Jabůrková" />
-          <div class="personnel-info">
-            <strong>Jitka Jabůrková</strong>
-            <span><em>Kája, Koudelková</em></span>
-            <span>Hlavní vedoucí</span>
-            <span>Zdravotník</span>
-          </div>
-        </div>
-        <!-- Miloš Kratochvíl -->
-        <div class="personnel-card">
-          <img src="images/miloš oddílak.jpg" alt="Miloš Kratochvíl" />
-          <div class="personnel-info">
-            <strong>Miloš Kratochvíl</strong>
-            <span><em>Koudelka</em></span>
-            <span>Oddílák – 2. oddíl</span>
-          </div>
-        </div>
-        <!-- Světlana Škorpilová -->
-        <div class="personnel-card">
-          <img src="images/svetlanka zastupce hl vednoucí.jpg" alt="Světlana Škorpilová" />
-          <div class="personnel-info">
-            <strong>Světlana Škorpilová</strong>
-            <span><em>Světluška</em></span>
-            <span>Oddílák – 3. oddíl</span>
-            <span>Zástupce HV</span>
-          </div>
-        </div>
-        <!-- Jan Frýba -->
-        <div class="personnel-card">
-          <img src="images/jan frýba oddílak.jpg" alt="Jan Frýba" />
-          <div class="personnel-info">
-            <strong>Jan Frýba</strong>
-            <span><em>Čiko</em></span>
-            <span>Oddílák – 4. oddíl</span>
-          </div>
-        </div>
-        <!-- Filip Adam -->
-        <div class="personnel-card">
-          <img src="images/filip oddílak.jpg" alt="Filip Adam" />
-          <div class="personnel-info">
-            <strong>Filip Adam</strong>
-            <span>Oddílák – 5. oddíl</span>
-          </div>
-        </div>
-        <!-- Laura Bruchanová -->
-        <div class="personnel-card">
-          <img src="images/laura oddílak.jpg" alt="Laura Bruchanová" />
-          <div class="personnel-info">
-            <strong>Laura Bruchanová</strong>
-            <span>Oddílák – 1. oddíl</span>
-          </div>
-        </div>
-        <!-- Natálie Kratochvílová -->
-        <div class="personnel-card">
-          <img src="images/naty praktikant.jpg" alt="Natálie Kratochvílová" />
-          <div class="personnel-info">
-            <strong>Natálie Kratochvílová</strong>
-            <span>Praktikant – 2. oddíl</span>
-          </div>
-        </div>
-        <!-- Zuzana Čepičková -->
-        <div class="personnel-card">
-          <img src="images/zuzana praktitkan.jpg" alt="Zuzana Čepičková" />
-          <div class="personnel-info">
-            <strong>Zuzana Čepičková</strong>
-            <span>Praktikant – 1. oddíl</span>
-          </div>
-        </div>
-        <!-- Matyáš Růžička -->
-        <div class="personnel-card">
-          <img src="images/maty praktikant.jpg" alt="Matyáš Růžička" />
-          <div class="personnel-info">
-            <strong>Matyáš Růžička</strong>
-            <span>Praktikant – 4. oddíl</span>
-          </div>
-        </div>
-        <!-- Ondřej Ladnar -->
-        <div class="personnel-card">
-          <img src="images/ondra ladnar.jpg" alt="Ondřej Ladnar" />
-          <div class="personnel-info">
-            <strong>Ondřej Ladnar</strong>
-            <span>Ferda Mravenec</span>
-          </div>
-        </div>
-        <!-- Marie Růžičková -->
-        <div class="personnel-card">
-          <img src="images/marie praktikant.jpg" alt="Marie Růžičková" />
-          <div class="personnel-info">
-            <strong>Marie Růžičková</strong>
-            <span><em>Mažu</em></span>
-            <span>Praktikant – 5. oddíl</span>
-          </div>
-        </div>
-        <!-- Kryštof Škorpil -->
-        <div class="personnel-card">
-          <img src="images/kryštof praktikant.jpg" alt="Kryštof Škorpil" />
-          <div class="personnel-info">
-            <strong>Kryštof Škorpil</strong>
-            <span><em>Tůta</em></span>
-            <span>Praktikant – 3. oddíl</span>
-          </div>
-        </div>
-        <!-- Lenka Kremličková -->
-        <div class="personnel-card">
-          <img src="images/lenička kuchařka.jpg" alt="Lenka Kremličková" />
-          <div class="personnel-info">
-            <strong>Lenka Kremličková</strong>
-            <span><em>Naše Lenička</em></span>
-            <span>Kuchařka</span>
-          </div>
-        </div>
-        <!-- Radek Špejzl -->
-        <div class="personnel-card">
-          <img src="images/.gitkeep" alt="Radek Špejzl" style="display:none;" />
-          <div class="personnel-info">
-            <strong>Radek Špejzl</strong>
-            <span><em>Vařečka</em></span>
-            <span>Kuchař</span>
-          </div>
-        </div>
-        <!-- Lucie Hybnerová -->
-        <div class="personnel-card">
-          <img src="images/luca zdravotník.jpg" alt="Lucie Hybnerová" />
-          <div class="personnel-info">
-            <strong>Lucie Hybnerová</strong>
-            <span><em>Božík</em></span>
-            <span>Zdravotník</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- Další sekce podle potřeby ... -->
-
-</main>
-
-<footer>
-  &copy; 2025 Pleskotaček – Všechna práva vyhrazena
-</footer>
+<!-- další sekce ... -->
 
 <script>
-  const menuItems = document.querySelectorAll('nav div');
+  const menuItems = document.querySelectorAll('#menu div');
   const sections = document.querySelectorAll('.content-section');
+  const banner = document.getElementById('banner');
+
   menuItems.forEach(item => {
     item.addEventListener('click', () => {
-      // odstraní aktivní třídu všem položkám menu a sekcím
+      // Odstraníme aktivitu z menu
       menuItems.forEach(i => i.classList.remove('active'));
-      sections.forEach(s => s.classList.remove('active'));
-
-      // přidá aktivní třídu kliknutému menu a odpovídající sekci
       item.classList.add('active');
-      const target = item.getAttribute('data-target');
-      document.getElementById(target).classList.add('active');
+
+      // Skryjeme všechny sekce
+      sections.forEach(section => section.classList.remove('active'));
+
+      // Zobrazíme vybranou sekci
+      const targetId = item.getAttribute('data-target');
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.classList.add('active');
+      }
+
+      // Banner zobrazujeme jen u úvodu
+      if (targetId === 'uvod') {
+        banner.style.display = 'block';
+      } else {
+        banner.style.display = 'none';
+      }
     });
   });
 </script>
