@@ -262,83 +262,112 @@
       O bezproblémové zázemí tábora se stará Míra, zvaný Mumuland.
       Kvalitní program pro děti zajišťují lidé, kteří mají zkušenosti s dětskými tábory i speciálními pedagogickými aktivitami.
     </p>
+
+    <div class="personnel">
+      <h2>Personál</h2>
+      <div class="personnel-list">
+        <div class="personnel-card">
+          <img src="images/radek.jpg" alt="Radek - kuchař" />
+          <div class="personnel-info">
+            <strong>Radek</strong>
+            <span>Kuchař</span>
+            <em>O přípravu chutné stravy se stará Radek.</em>
+          </div>
+        </div>
+        <div class="personnel-card">
+          <img src="images/lena.jpg" alt="Léňa - kuchařka" />
+          <div class="personnel-info">
+            <strong>Léňa</strong>
+            <span>Kuchařka</span>
+            <em>Pomáhá s přípravou jídel a výborně peče.</em>
+          </div>
+        </div>
+        <div class="personnel-card">
+          <img src="images/lucka.jpg" alt="Lucka - zdravotnice" />
+          <div class="personnel-info">
+            <strong>Lucka</strong>
+            <span>Zdravotnice</span>
+            <em>Profesionální zdravotní sestra, která se stará o zdraví dětí.</em>
+          </div>
+        </div>
+        <div class="personnel-card">
+          <img src="images/kristyna.jpg" alt="Kristýna - zdravotnice" />
+          <div class="personnel-info">
+            <strong>Kristýna</strong>
+            <span>Zdravotnice</span>
+            <em>Podporuje zdraví a bezpečnost na táboře.</em>
+          </div>
+        </div>
+        <div class="personnel-card">
+          <img src="images/mira.jpg" alt="Míra - Mumuland" />
+          <div class="personnel-info">
+            <strong>Míra (Mumuland)</strong>
+            <span>Technická podpora</span>
+            <em>Postará se o bezproblémové zázemí tábora.</em>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="prihlaska" class="content-section">
     <h2>Přihláška</h2>
-    <p>
-      Přihlašování je možné online přes náš web. Vyplňte přihlášku a uveďte všechny důležité údaje o dítěti i kontaktní informace.
-    </p>
+    <p>Formulář pro přihlášení bude zde (zatím v přípravě).</p>
   </section>
 
   <section id="dulezite" class="content-section">
     <h2>Důležité informace</h2>
-    <p>
-      Tábor začíná v pondělí ráno a končí v pátek odpoledne. Přineste s sebou základní vybavení, léky a dobrou náladu!
-    </p>
+    <p>Informace k táboru a pravidla účasti budou zde.</p>
   </section>
 
   <section id="program" class="content-section">
     <h2>Program a jídelníček</h2>
-    <p>
-      Každý den nás čekají zajímavé výlety, sportovní aktivity a večerní táboráky.
-      Jídelníček je pestrý a vyvážený, připravovaný s ohledem na věkové skupiny.
-    </p>
+    <p>Podrobný program a jídelníček budou doplněny.</p>
   </section>
 
   <section id="fotogalerie" class="content-section">
     <h2>Fotogalerie</h2>
-    <p>Fotky z minulých ročníků budou brzy doplněny.</p>
+    <p>Fotky z minulých táborů budou postupně doplněny.</p>
   </section>
 
   <section id="kontakt" class="content-section">
     <h2>Kontakt</h2>
-    <p>
-      Pro více informací nás kontaktujte na emailu: info@pleskotacek.cz nebo na telefonu: +420 123 456 789.
-    </p>
+    <p>Kontakt na organizátory tábora a personál.</p>
   </section>
 
   <section id="reference" class="content-section">
     <h2>Reference</h2>
-    <p>
-      "Tábor Pleskoťáček byl pro mé děti nezapomenutelný zážitek." – Jana K.
-    </p>
+    <p>Zkušenosti rodičů a dětí z předchozích ročníků.</p>
   </section>
 
   <section id="sponzori" class="content-section">
     <h2>Sponzoři</h2>
-    <p>
-      Děkujeme všem sponzorům za podporu našeho tábora.
-    </p>
+    <p>Poděkování sponzorům a partnerům tábora.</p>
   </section>
 </main>
 
 <footer>
-  © 2025 Pleskotaček – Všechna práva vyhrazena.
+  &copy; 2025 Pleskotaček – Dětský tábor v Českém ráji. Všechna práva vyhrazena.
 </footer>
 
 <script>
-  const menuItems = document.querySelectorAll('nav div');
-  const sections = document.querySelectorAll('.content-section');
-  const banner = document.getElementById('banner');
+  const menuItems = document.querySelectorAll("nav div");
+  const sections = document.querySelectorAll("section.content-section");
 
   menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-      // Odstraní aktivní třídu všem položkám menu a sekcím
-      menuItems.forEach(i => i.classList.remove('active'));
-      sections.forEach(s => s.classList.remove('active'));
+    item.addEventListener("click", () => {
+      menuItems.forEach(i => i.classList.remove("active"));
+      item.classList.add("active");
 
-      // Přidá aktivní třídu kliknutému menu a odpovídající sekci
-      item.classList.add('active');
-      const target = item.getAttribute('data-target');
-      document.getElementById(target).classList.add('active');
-
-      // Zobrazí banner jen na úvodní stránce, jinak ho skryje
-      if (target === 'uvod') {
-        banner.style.display = 'block';
-      } else {
-        banner.style.display = 'none';
-      }
+      const target = item.getAttribute("data-target");
+      sections.forEach(section => {
+        if (section.id === target) {
+          section.classList.add("active");
+        } else {
+          section.classList.remove("active");
+        }
+      });
+      window.scrollTo(0,0);
     });
   });
 </script>
