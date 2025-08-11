@@ -899,62 +899,63 @@
 </section>
 
 <section id="reference" class="content-section">
-  <h2>Reference</h2>
-  <p>Recenze a zpětná vazba od rodičů a dětí.</p>
+    <h2>Reference</h2>
+    <p>Recenze a zpětná vazba od rodičů a dětí.</p>
 </section>
 
 <section id="sponzori" class="content-section">
-  <h2>Sponzoři</h2>
-  <p>Poděkování sponzorům a partnerům.</p>
+    <h2>Sponzoři</h2>
+    <p>Poděkování sponzorům a partnerům.</p>
 </section>
 
-</main>
-
 <footer>
-  © 2025 Dětský tábor Pleskoťáček
+    © 2025 Dětský tábor Pleskoťáček
 </footer>
 
 <style>
-  section.content-section {
-    display: none;
-  }
-  section.content-section.active {
-    display: block;
-  }
+    section.content-section {
+        display: none;
+    }
+    section.content-section.active {
+        display: block;
+    }
 </style>
 
 <script>
-  const menuItems = document.querySelectorAll("nav div[data-target]");
-  const sections = document.querySelectorAll("section.content-section");
+    const menuItems = document.querySelectorAll("nav div[data-target]");
+    const sections = document.querySelectorAll("section.content-section");
 
-  menuItems.forEach(item => {
-    item.addEventListener("click", () => {
-      const targetId = item.getAttribute("data-target");
+    menuItems.forEach(item => {
+        item.addEventListener("click", () => {
+            const targetId = item.getAttribute("data-target");
 
-      menuItems.forEach(i => i.classList.remove("active"));
-      sections.forEach(s => s.classList.remove("active"));
+            menuItems.forEach(i => i.classList.remove("active"));
+            sections.forEach(s => s.classList.remove("active"));
 
-      item.classList.add("active");
-      document.getElementById(targetId).classList.add("active");
+            item.classList.add("active");
+            document.getElementById(targetId).classList.add("active");
 
-      const banner = document.getElementById("banner");
-      if(targetId === "uvod") {
-        banner.style.display = "block";
-      } else {
-        banner.style.display = "none";
-      }
+            const banner = document.getElementById("banner");
+            if (targetId === "uvod") {
+                banner.style.display = "block";
+            } else {
+                banner.style.display = "none";
+            }
+        });
     });
-  });
 
-  menuItems[0].classList.add("active");
-  if(sections.length > 0) {
-    sections[0].classList.add("active");
-  }
+    if (menuItems.length > 0) {
+        menuItems[0].classList.add("active");
+    }
+    if (sections.length > 0) {
+        sections[0].classList.add("active");
+    }
 </script>
 
 
 </body>
 </html>
+
 
 
 
