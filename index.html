@@ -829,60 +829,70 @@
   </ul>
 </section>
 
-  <section id="fotogalerie" class="content-section">
-    <h2>Fotogalerie</h2>
-    <p>Fotky z minulých ročníků tábora.</p>
-  </section>
+    <section id="fotogalerie" class="content-section">
+      <h2>Fotogalerie</h2>
+      <p>Prohlédněte si fotky z minulých ročníků tábora, které zachycují nejlepší momenty a radost dětí.</p>
+      <!-- Sem můžeš přidat třeba <img> tagy s fotkami -->
+    </section>
 
-  <section id="kontakt" class="content-section">
-    <h2>Kontakt</h2>
-    <p>Kontaktní informace.</p>
-  </section>
+    <section id="kontakt" class="content-section">
+      <h2>Kontakt</h2>
+      <p>Máte otázky? Napište nám na <a href="mailto:info@pleskotacek.cz">info@pleskotacek.cz</a> nebo volejte na +420 123 456 789.</p>
+      <p>Tábor se nachází na adrese: Pleskoťácká 15, 123 45 Táborovice.</p>
+    </section>
 
-  <section id="reference" class="content-section">
-    <h2>Reference</h2>
-    <p>Recenze a zpětná vazba od rodičů a dětí.</p>
-  </section>
+    <section id="reference" class="content-section">
+      <h2>Reference</h2>
+      <p>Naši táboroví rodiče nám píší skvělé recenze. "Tábor byl pro naše děti zážitek na celý život!" – Jana M.</p>
+      <p>"Perfektní organizace a milý personál." – Petr K.</p>
+    </section>
 
-  <section id="sponzori" class="content-section">
-    <h2>Sponzoři</h2>
-    <p>Poděkování sponzorům a partnerům.</p>
-  </section>
-</main>
+    <section id="sponzori" class="content-section">
+      <h2>Sponzoři</h2>
+      <p>Děkujeme našim sponzorům a partnerům, kteří nám pomáhají zajistit tábor na vysoké úrovni:</p>
+      <ul>
+        <li>Firma XYZ</li>
+        <li>Město Táborovice</li>
+        <li>Sportovní klub Pleskot</li>
+      </ul>
+    </section>
+  </main>
 
-<footer>
-  © 2025 Dětský tábor Pleskoťáček
-</footer>
+  <footer>
+    © 2025 Dětský tábor Pleskoťáček
+  </footer>
 
-<script>
-  const menuItems = document.querySelectorAll("nav div[data-target]");
-  const sections = document.querySelectorAll("section.content-section");
+  <script>
+    const menuItems = document.querySelectorAll("nav div[data-target]");
+    const sections = document.querySelectorAll("section.content-section");
+    const banner = document.getElementById("banner");
 
-  menuItems.forEach(item => {
-    item.addEventListener("click", () => {
-      const targetId = item.getAttribute("data-target");
+    menuItems.forEach(item => {
+      item.addEventListener("click", () => {
+        const targetId = item.getAttribute("data-target");
 
-      // Odznačit všechny položky menu a sekce
-      menuItems.forEach(i => i.classList.remove("active"));
-      sections.forEach(s => s.classList.remove("active"));
+        // Odznačit všechny aktivní položky menu a sekce
+        menuItems.forEach(i => i.classList.remove("active"));
+        sections.forEach(s => s.classList.remove("active"));
 
-      // Aktivovat kliknutou položku menu a odpovídající sekci
-      item.classList.add("active");
-      document.getElementById(targetId).classList.add("active");
+        // Aktivovat vybranou položku menu a odpovídající sekci
+        item.classList.add("active");
+        document.getElementById(targetId).classList.add("active");
 
-      // Banner se schová jen pokud není aktivní úvod
-      const banner = document.getElementById("banner");
-      if(targetId === "uvod") {
-        banner.style.display = "block";
-      } else {
-        banner.style.display = "none";
-      }
+        // Banner se zobrazí jen u úvodu, jinde se schová
+        if(targetId === "uvod") {
+          banner.style.display = "block";
+        } else {
+          banner.style.display = "none";
+        }
+      });
     });
-  });
 
-  // Nastavit výchozí aktivní položku v menu (Úvod)
-  menuItems[0].classList.add("active");
-</script>
+    // Výchozí aktivní položka i sekce při načtení stránky
+    menuItems[0].classList.add("active");
+    sections[0].classList.add("active");
+    banner.style.display = "block";
+  </script>
 
 </body>
 </html>
