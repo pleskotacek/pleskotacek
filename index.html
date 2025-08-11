@@ -584,461 +584,124 @@
 
   </section>
 
-  <section id="program" class="content-section">
+<section id="prihlaska" class="content-section">
   <div style="max-width: 900px; margin: 0 auto;">
-    <h2 style="color: #2E4A1F; border-bottom: 3px solid #7BB661; padding-bottom: 10px; margin-bottom: 30px;">Program a jídelníček</h2>
+    <div style="background: #F5F1E9; border-radius: 10px; padding: 30px; margin-bottom: 30px;">
+      <h2 style="color: #2E4A1F; border-bottom: 2px solid #7BB661; padding-bottom: 10px; margin-bottom: 20px;">Přihláška a dokumenty</h2>
+      
+      <div style="margin-bottom: 25px;">
+        <h3 style="color: #4B3B2B; margin-bottom: 15px;">Jak přihlásit dítě na tábor?</h3>
+        <p style="color: #4B3B2B; margin-bottom: 15px;">
+          Pokud máte vážný zájem o účast vašeho dítěte na táboře, vyplňte prosím níže uvedený formulář.
+          V případě speciálních požadavků (například dietních – bezlepková strava či jiné) nás prosím informujte e-mailem. Budeme se snažit vyhovět všem potřebám.
+        </p>
+        <p style="color: #4B3B2B; margin-bottom: 15px;">
+          <strong>Důležité:</strong> Pokud do 2 dnů neobdržíte potvrzení o přijetí přihlášky, kontaktujte nás na <a href="mailto:taborpleskotacek@seznam.cz" style="color: #7BB661; text-decoration: underline;">taborpleskotacek@seznam.cz</a>.
+        </p>
+      </div>
+
+      <div style="background: white; border-radius: 8px; padding: 25px; margin-bottom: 25px;">
+        <h3 style="color: #4B3B2B; margin-bottom: 20px;">Podmínky přihlášení</h3>
+        <ul style="color: #4B3B2B; padding-left: 20px; margin-bottom: 20px;">
+          <li style="margin-bottom: 8px;">Storno poplatek v červnu: 50% z ceny tábora</li>
+          <li style="margin-bottom: 8px;">Storno poplatek v červenci: 100% z ceny tábora</li>
+          <li style="margin-bottom: 8px;">Neomluvené nenastoupení: žádná náhrada</li>
+          <li>Při onemocnění: nutné lékařské potvrzení</li>
+        </ul>
+        <p style="color: #6B7B53; font-style: italic;">Pojištění účasti nezajišťujeme, dítě musí mít vlastní zdravotní pojištění.</p>
+      </div>
+    </div>
+
+    <!-- Formulář -->
+    <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+      <div style="flex: 1; min-width: 300px;">
+        <div style="background: #F5F1E9; border-radius: 10px; padding: 30px;">
+          <h3 style="color: #2E4A1F; margin-bottom: 25px; text-align: center;">Přihlašovací formulář</h3>
+          
+          <form action="https://formspree.io/f/mpwlkyyj" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
+            <div>
+              <label for="jmeno" style="display: block; color: #4B3B2B; font-weight: 600; margin-bottom: 8px;">Jméno a příjmení dítěte</label>
+              <input type="text" id="jmeno" name="jmeno" required style="width: 100%; padding: 12px; border: 1px solid #7BB661; border-radius: 6px; background: white;">
+            </div>
+            
+            <div>
+              <label for="email" style="display: block; color: #4B3B2B; font-weight: 600; margin-bottom: 8px;">E-mail zákonného zástupce</label>
+              <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid #7BB661; border-radius: 6px; background: white;">
+            </div>
+            
+            <div>
+              <label for="narozeni" style="display: block; color: #4B3B2B; font-weight: 600; margin-bottom: 8px;">Datum narození dítěte</label>
+              <input type="date" id="narozeni" name="narozeni" required style="width: 100%; padding: 12px; border: 1px solid #7BB661; border-radius: 6px; background: white;">
+            </div>
+            
+            <div>
+              <label for="telefon" style="display: block; color: #4B3B2B; font-weight: 600; margin-bottom: 8px;">Telefonní číslo</label>
+              <input type="tel" id="telefon" name="telefon" required style="width: 100%; padding: 12px; border: 1px solid #7BB661; border-radius: 6px; background: white;">
+            </div>
+            
+            <div>
+              <label for="tricko" style="display: block; color: #4B3B2B; font-weight: 600; margin-bottom: 8px;">Velikost trička</label>
+              <select id="tricko" name="tricko" required style="width: 100%; padding: 12px; border: 1px solid #7BB661; border-radius: 6px; background: white;">
+                <option value="" disabled selected>Vyberte velikost</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+              </select>
+            </div>
+            
+            <button type="submit" style="background: #7BB661; color: white; padding: 14px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.3s; margin-top: 10px;">
+              Odeslat přihlášku
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Informace -->
+      <div style="flex: 1; min-width: 300px;">
+        <div style="background: #F5F1E9; border-radius: 10px; padding: 30px; height: 100%;">
+          <h3 style="color: #2E4A1F; margin-bottom: 20px; border-bottom: 2px solid #7BB661; padding-bottom: 10px;">Důležité informace</h3>
+          
+          <div style="margin-bottom: 25px;">
+            <h4 style="color: #4B3B2B; margin-bottom: 10px;">Potřebné dokumenty:</h4>
+            <ol style="color: #4B3B2B; padding-left: 20px;">
+              <li style="margin-bottom: 8px;">Vyplněná přihláška</li>
+              <li style="margin-bottom: 8px;">Potvrzení o zdravotní způsobilosti</li>
+              <li style="margin-bottom: 8px;">Potvrzení o bezinfekčnosti</li>
+              <li style="margin-bottom: 8px;">Seznam léků s dávkováním</li>
+              <li style="margin-bottom: 8px;">Kopie kartičky pojišťovny</li>
+              <li>Doklad o zaplacení</li>
+            </ol>
+            <p style="color: #d32f2f; font-weight: 600; margin-top: 10px;">Bez těchto dokumentů nelze dítě přijmout!</p>
+          </div>
+          
+          <div style="margin-bottom: 25px;">
+            <h4 style="color: #4B3B2B; margin-bottom: 10px;">Termíny:</h4>
+            <p style="color: #4B3B2B; margin-bottom: 5px;"><strong>Příjezd:</strong> 27.7.2025 do 12:00</p>
+            <p style="color: #4B3B2B;"><strong>Odjezd:</strong> 9.8.2025 do 12:00</p>
+          </div>
+          
+          <div>
+            <h4 style="color: #4B3B2B; margin-bottom: 10px;">Platba:</h4>
+            <p style="color: #4B3B2B;">Číslo účtu: <strong>2002106668/2010</strong></p>
+            <p style="color: #4B3B2B; margin-top: 5px;">Fakturu vystavíme na základě e-mailové žádosti.</p>
+          </div>
+        </div>
+      </div>
+    </div>
     
-    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-      <!-- Day 1 -->
-      <div style="flex: 1 1 400px; background: #F5F1E9; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-          <div style="background: #7BB661; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 1.2rem;">1</div>
-          <h3 style="color: #2E4A1F; margin: 0;">Den první 🌲</h3>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">🍴</span> Jídelníček
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li><strong>Snídaně:</strong> pleskotský stůl</li>
-            <li><strong>Svačina:</strong> ovoce</li>
-            <li><strong>Oběd:</strong> polévka + hlavní jídlo</li>
-            <li><strong>Svačina:</strong> pečivo</li>
-            <li><strong>Večeře:</strong> lehké jídlo</li>
-          </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">📜</span> Program
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li>Seznámení, hry na prolomení ledů</li>
-            <li>Prohlídka areálu</li>
-            <li>Večerní táborák</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Day 2 -->
-      <div style="flex: 1 1 400px; background: #F5F1E9; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-          <div style="background: #7BB661; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 1.2rem;">2</div>
-          <h3 style="color: #2E4A1F; margin: 0;">Den druhý 🌲</h3>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">🍴</span> Jídelníček
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li><strong>Snídaně:</strong> pleskotský stůl</li>
-            <li><strong>Svačina:</strong> ovoce</li>
-            <li><strong>Oběd:</strong> polévka + hlavní jídlo</li>
-            <li><strong>Svačina:</strong> pečivo</li>
-            <li><strong>Večeře:</strong> lehké jídlo</li>
-          </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">📜</span> Program
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li>Sportovní hry</li>
-            <li>Tvorba týmových znaků</li>
-            <li>Večer her a soutěží</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Day 3 -->
-      <div style="flex: 1 1 400px; background: #F5F1E9; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-          <div style="background: #7BB661; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 1.2rem;">3</div>
-          <h3 style="color: #2E4A1F; margin: 0;">Den třetí 🌲</h3>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">🍴</span> Jídelníček
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li><strong>Snídaně:</strong> pleskotský stůl</li>
-            <li><strong>Svačina:</strong> ovoce</li>
-            <li><strong>Oběd:</strong> polévka + hlavní jídlo</li>
-            <li><strong>Svačina:</strong> pečivo</li>
-            <li><strong>Večeře:</strong> lehké jídlo</li>
-          </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">📜</span> Program
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li>Výlet do přírody</li>
-            <li>Výtvarné dílny</li>
-            <li>Večerní táborák</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Day 4 -->
-      <div style="flex: 1 1 400px; background: #F5F1E9; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-          <div style="background: #7BB661; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 1.2rem;">4</div>
-          <h3 style="color: #2E4A1F; margin: 0;">Den čtvrtý 🌲</h3>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">🍴</span> Jídelníček
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li><strong>Snídaně:</strong> pleskotský stůl</li>
-            <li><strong>Svačina:</strong> ovoce</li>
-            <li><strong>Oběd:</strong> polévka + hlavní jídlo</li>
-            <li><strong>Svačina:</strong> pečivo</li>
-            <li><strong>Večeře:</strong> lehké jídlo</li>
-          </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">📜</span> Program
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li>Sportovní soutěže</li>
-            <li>Hry v lese</li>
-            <li>Večer deskových her</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Continue this pattern for Days 5-14 -->
-      <!-- Day 5 -->
-      <div style="flex: 1 1 400px; background: #F5F1E9; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-          <div style="background: #7BB661; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 1.2rem;">5</div>
-          <h3 style="color: #2E4A1F; margin: 0;">Den pátý 🌲</h3>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">🍴</span> Jídelníček
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li><strong>Snídaně:</strong> pleskotský stůl</li>
-            <li><strong>Svačina:</strong> ovoce</li>
-            <li><strong>Oběd:</strong> polévka + hlavní jídlo</li>
-            <li><strong>Svačina:</strong> pečivo</li>
-            <li><strong>Večeře:</strong> lehké jídlo</li>
-          </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">📜</span> Program
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li>Výtvarné aktivity</li>
-            <li>Týmové hry</li>
-            <li>Večerní táborák s hudbou</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Day 6 -->
-      <div style="flex: 1 1 400px; background: #F5F1E9; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-          <div style="background: #7BB661; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 1.2rem;">6</div>
-          <h3 style="color: #2E4A1F; margin: 0;">Den šestý 🌲</h3>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">🍴</span> Jídelníček
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li><strong>Snídaně:</strong> pleskotský stůl</li>
-            <li><strong>Svačina:</strong> jablko</li>
-            <li><strong>Oběd:</strong> rajská polévka, těstoviny, kuřecí maso</li>
-            <li><strong>Svačina:</strong> pečivo s pomazánkou</li>
-            <li><strong>Večeře:</strong> bramborová kaše, karbanátek</li>
-          </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">📜</span> Program
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li>Týmové hry a soutěže</li>
-            <li>Tvorba táborových kronik</li>
-            <li>Večerní táborák s hudbou</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Continue this pattern for Days 7-14 -->
-      <!-- Day 7 -->
-      <div style="flex: 1 1 400px; background: #F5F1E9; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-          <div style="background: #7BB661; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 1.2rem;">7</div>
-          <h3 style="color: #2E4A1F; margin: 0;">Den sedmý 🌲</h3>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">🍴</span> Jídelníček
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li><strong>Snídaně:</strong> pleskotský stůl</li>
-            <li><strong>Svačina:</strong> hroznové víno</li>
-            <li><strong>Oběd:</strong> gulášová polévka, knedlíky, hovězí maso</li>
-            <li><strong>Svačina:</strong> jogurt s ovocem</li>
-            <li><strong>Večeře:</strong> zeleninové rizoto</li>
-          </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">📜</span> Program
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li>Výlet do přírody</li>
-            <li>Hry v lese</li>
-            <li>Večer deskových her</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Day 8 -->
-      <div style="flex: 1 1 400px; background: #F5F1E9; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-          <div style="background: #7BB661; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 1.2rem;">8</div>
-          <h3 style="color: #2E4A1F; margin: 0;">Den osmý 🌲</h3>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">🍴</span> Jídelníček
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li><strong>Snídaně:</strong> pleskotský stůl</li>
-            <li><strong>Svačina:</strong> banán</li>
-            <li><strong>Oběd:</strong> čočková polévka, bramborový salát, řízek</li>
-            <li><strong>Svačina:</strong> ovoce</li>
-            <li><strong>Večeře:</strong> zeleninová polévka, těstoviny s pestem</li>
-          </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">📜</span> Program
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li>Sportovní soutěže</li>
-            <li>Výtvarné dílny</li>
-            <li>Večer talentové soutěže</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Continue this pattern for Days 9-14 -->
-      <!-- Day 9 -->
-      <div style="flex: 1 1 400px; background: #F5F1E9; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-          <div style="background: #7BB661; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 1.2rem;">9</div>
-          <h3 style="color: #2E4A1F; margin: 0;">Den devátý 🌲</h3>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">🍴</span> Jídelníček
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li><strong>Snídaně:</strong> pleskotský stůl</li>
-            <li><strong>Svačina:</strong> jablko</li>
-            <li><strong>Oběd:</strong> houbová polévka, pečené kuře, brambory</li>
-            <li><strong>Svačina:</strong> pečivo</li>
-            <li><strong>Večeře:</strong> zeleninový salát</li>
-          </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">📜</span> Program
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li>Výlet do přírody</li>
-            <li>Hry na týmovou spolupráci</li>
-            <li>Večerní táborák</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Day 10 -->
-      <div style="flex: 1 1 400px; background: #F5F1E9; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-          <div style="background: #7BB661; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 1.2rem;">10</div>
-          <h3 style="color: #2E4A1F; margin: 0;">Den desátý 🌲</h3>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">🍴</span> Jídelníček
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li><strong>Snídaně:</strong> pleskotský stůl</li>
-            <li><strong>Svačina:</strong> ovoce</li>
-            <li><strong>Oběd:</strong> rajská polévka, těstoviny, kuřecí maso</li>
-            <li><strong>Svačina:</strong> pečivo</li>
-            <li><strong>Večeře:</strong> bramborová kaše, karbanátek</li>
-          </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">📜</span> Program
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li>Sportovní hry</li>
-            <li>Tvorba táborových znaků</li>
-            <li>Večer her a soutěží</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Day 11 -->
-      <div style="flex: 1 1 400px; background: #F5F1E9; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-          <div style="background: #7BB661; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 1.2rem;">11</div>
-          <h3 style="color: #2E4A1F; margin: 0;">Den jedenáctý 🌲</h3>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">🍴</span> Jídelníček
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li><strong>Snídaně:</strong> pleskotský stůl</li>
-            <li><strong>Svačina:</strong> jogurt s ovocem</li>
-            <li><strong>Oběd:</strong> zeleninová polévka, těstoviny s pestem</li>
-            <li><strong>Svačina:</strong> pečivo</li>
-            <li><strong>Večeře:</strong> zeleninové rizoto</li>
-          </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">📜</span> Program
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li>Výtvarné dílny</li>
-            <li>Týmové hry</li>
-            <li>Večerní talentová soutěž</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Day 12 -->
-      <div style="flex: 1 1 400px; background: #F5F1E9; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-          <div style="background: #7BB661; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 1.2rem;">12</div>
-          <h3 style="color: #2E4A1F; margin: 0;">Den dvanáctý 🌲</h3>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">🍴</span> Jídelníček
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li><strong>Snídaně:</strong> pleskotský stůl</li>
-            <li><strong>Svačina:</strong> ovoce</li>
-            <li><strong>Oběd:</strong> gulášová polévka, knedlíky, hovězí maso</li>
-            <li><strong>Svačina:</strong> pečivo</li>
-            <li><strong>Večeře:</strong> bramborová kaše, karbanátek</li>
-          </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">📜</span> Program
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li>Výlet do přírody</li>
-            <li>Hry v lese</li>
-            <li>Večer deskových her</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Day 13 -->
-      <div style="flex: 1 1 400px; background: #F5F1E9; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-          <div style="background: #7BB661; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 1.2rem;">13</div>
-          <h3 style="color: #2E4A1F; margin: 0;">Den třináctý 🌲</h3>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">🍴</span> Jídelníček
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li><strong>Snídaně:</strong> pleskotský stůl</li>
-            <li><strong>Svačina:</strong> banán</li>
-            <li><strong>Oběd:</strong> čočková polévka, bramborový salát, řízek</li>
-            <li><strong>Svačina:</strong> ovoce</li>
-            <li><strong>Večeře:</strong> zeleninová polévka, těstoviny s pestem</li>
-          </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">📜</span> Program
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li>Sportovní soutěže</li>
-            <li>Výtvarné dílny</li>
-            <li>Večer talentové soutěže</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Day 14 -->
-      <div style="flex: 1 1 400px; background: #F5F1E9; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-          <div style="background: #7BB661; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; color: white; font-size: 1.2rem;">14</div>
-          <h3 style="color: #2E4A1F; margin: 0;">Den čtrnáctý 🌲</h3>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">🍴</span> Jídelníček
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li><strong>Snídaně:</strong> pleskotský stůl</li>
-            <li><strong>Svačina:</strong> ovoce</li>
-            <li><strong>Oběd:</strong> houbová polévka, pečené kuře, brambory</li>
-            <li><strong>Svačina:</strong> pečivo</li>
-            <li><strong>Večeře:</strong> zeleninový salát</li>
-          </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 8px; padding: 15px;">
-          <h4 style="color: #7BB661; margin: 0 0 10px 0; display: flex; align-items: center;">
-            <span style="margin-right: 10px;">📜</span> Program
-          </h4>
-          <ul style="color: #4B3B2B; padding-left: 20px; margin: 0;">
-            <li>Závěrečný výlet</li>
-            <li>Hodnocení a zpětná vazba</li>
-            <li>Večerní táborák</li>
-          </ul>
-        </div>
-      </div>
+    <!-- Další info -->
+    <div style="background: #F5F1E9; border-radius: 10px; padding: 25px; margin-top: 30px;">
+      <h3 style="color: #2E4A1F; margin-bottom: 15px;">Co dělat po odeslání přihlášky?</h3>
+      <p style="color: #4B3B2B; margin-bottom: 15px;">
+        Do 2 pracovních dnů obdržíte potvrzení o přijetí přihlášky a instrukce k platbě. 
+        Pokud e-mail nedorazí, zkontrolujte složku s nevyžádanou poštou nebo nás kontaktujte.
+      </p>
+      <p style="color: #4B3B2B;">
+        Místo v táboře je rezervováno až po přijetí platby. Kapacita je omezená, doporučujeme neodkládat úhradu.
+      </p>
     </div>
   </div>
 </section>
@@ -1221,5 +884,6 @@
 
 </body>
 </html>
+
 
 
