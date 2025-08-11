@@ -878,21 +878,30 @@
 
 </section>
 
+<section id="reference" class="content-section">
+  <h2>Reference</h2>
+  <p>Recenze a zpětná vazba od rodičů a dětí.</p>
+</section>
 
-  <section id="reference" class="content-section">
-    <h2>Reference</h2>
-    <p>Recenze a zpětná vazba od rodičů a dětí.</p>
-  </section>
+<section id="sponzori" class="content-section">
+  <h2>Sponzoři</h2>
+  <p>Poděkování sponzorům a partnerům.</p>
+</section>
 
-  <section id="sponzori" class="content-section">
-    <h2>Sponzoři</h2>
-    <p>Poděkování sponzorům a partnerům.</p>
-  </section>
 </main>
 
 <footer>
   © 2025 Dětský tábor Pleskoťáček
 </footer>
+
+<style>
+  section.content-section {
+    display: none;
+  }
+  section.content-section.active {
+    display: block;
+  }
+</style>
 
 <script>
   const menuItems = document.querySelectorAll("nav div[data-target]");
@@ -922,10 +931,15 @@
 
   // Nastavit výchozí aktivní položku v menu (Úvod)
   menuItems[0].classList.add("active");
+  // Nastavit výchozí aktivní sekci (první sekce)
+  if(sections.length > 0) {
+    sections[0].classList.add("active");
+  }
 </script>
 
 </body>
 </html>
+
 
 
 
