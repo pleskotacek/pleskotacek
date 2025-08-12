@@ -1375,8 +1375,20 @@ Místo v táboře je rezervováno až po přijetí platby. Kapacita je omezená,
   method="POST"
   style="max-width: 900px; margin: 0 auto; padding: 20px; color: #4B3B2B; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.5; background-color: transparent;"
 >
+  <label for="fullname" style="display:block; margin-bottom: 8px; font-weight: 600; color: #5E6D55;">
+    Jméno a příjmení:
+  </label>
+  <input
+    type="text"
+    name="fullname"
+    id="fullname"
+    required
+    style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #D1D9CE; border-radius: 5px; background-color: #F8F9F7; color: #4B3B2B;"
+    placeholder="Vaše jméno a příjmení"
+  >
+
   <label for="email" style="display:block; margin-bottom: 8px; font-weight: 600; color: #5E6D55;">
-    Your email:
+    E-mail:
   </label>
   <input
     type="email"
@@ -1388,7 +1400,7 @@ Místo v táboře je rezervováno až po přijetí platby. Kapacita je omezená,
   >
 
   <label for="message" style="display:block; margin-bottom: 8px; font-weight: 600; color: #5E6D55;">
-    Your message:
+    Zpráva:
   </label>
   <textarea
     name="message"
@@ -1463,6 +1475,7 @@ Místo v táboře je rezervováno až po přijetí platby. Kapacita je omezená,
 
 </body>
 </html>
+
 
 
 
