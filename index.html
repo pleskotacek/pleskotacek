@@ -1520,8 +1520,9 @@ Místo v táboře je rezervováno až po přijetí platby. Kapacita je omezená,
   <!-- favicon -->
   <link rel="icon" type="image/png" href="fitigalerie/logo.png">
 </head>
+ 
 </main>
-
+  
 <style>
   #sponzori .personnel-list img {
     display: block;
@@ -1529,16 +1530,6 @@ Místo v táboře je rezervováno až po přijetí platby. Kapacita je omezená,
     width: 100%;
     margin-bottom: 20px;
     object-fit: contain;
-  }
-
-  footer {
-    width: 100%;
-    margin: 0;
-    padding: 15px 0;
-    background-color: #222; /* tmavé pozadí, můžeš změnit */
-    color: white;
-    text-align: center;
-    position: relative;
   }
 </style>
 
@@ -1564,7 +1555,7 @@ Místo v táboře je rezervováno až po přijetí platby. Kapacita je omezená,
       document.getElementById(targetId).classList.add("active");
 
       // Banner se zobrazí jen u úvodu, jinde se schová
-      if (targetId === "uvod") {
+      if(targetId === "uvod") {
         banner.style.display = "block";
       } else {
         banner.style.display = "none";
