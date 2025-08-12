@@ -1512,18 +1512,36 @@ Místo v táboře je rezervováno až po přijetí platby. Kapacita je omezená,
     </div>
   </div>
 </section>
-  
+ <div style="color: #4B3B2B; line-height: 1.6;">
+  <p style="margin-bottom: 15px;">
+    Záleží nám na tom, aby si Vaše děti užily tábor ve vší parádě a domů si odvezly plno skvělých zážitků z dětského tábora, který se nachází v krásném prostředí uprostřed Českého ráje v Pleskotech, v těsné blízkosti chalupy, kde trávil prázdniny i Tomáš Holý ve filmu Jak dostat tatínka do polepšovny.
+  </p>
+  <p>
+    Přihlašovat své děti můžete, dokud jsou volná místa, nejdéle však do konce června. Později pouze po telefonické domluvě.
+  </p>
+</div>
+</div>
+</section>
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Moje stránka</title>
 
   <!-- favicon -->
-  <link rel="icon" type="image/png" href="fitigalerie/logo.png">
+  <link rel="icon" type="image/png" href="fitigalerie/logo.png" />
 </head>
- 
+
 </main>
-  
+
 <style>
+  #sponzori .personnel-list {
+    display: flex;
+    justify-content: space-between; /* rozprostře položky od levého k pravému okraji */
+    width: 100%; /* přes celou šířku rodiče */
+    flex-wrap: wrap; /* aby se zalamovalo, pokud není místo */
+    gap: 20px; /* mezera mezi položkami */
+  }
+
   #sponzori .personnel-list img {
     display: block;
     max-width: 150px;
@@ -1533,29 +1551,27 @@ Místo v táboře je rezervováno až po přijetí platby. Kapacita je omezená,
   }
 </style>
 
-<footer>
-  © 2025 Dětský tábor Pleskoťáček
-</footer>
+<footer>© 2025 Dětský tábor Pleskoťáček</footer>
 
 <script>
   const menuItems = document.querySelectorAll("nav div[data-target]");
   const sections = document.querySelectorAll("section.content-section");
   const banner = document.getElementById("banner");
 
-  menuItems.forEach(item => {
+  menuItems.forEach((item) => {
     item.addEventListener("click", () => {
       const targetId = item.getAttribute("data-target");
 
       // Odznačit všechny aktivní položky menu a sekce
-      menuItems.forEach(i => i.classList.remove("active"));
-      sections.forEach(s => s.classList.remove("active"));
+      menuItems.forEach((i) => i.classList.remove("active"));
+      sections.forEach((s) => s.classList.remove("active"));
 
       // Aktivovat vybranou položku menu a odpovídající sekci
       item.classList.add("active");
       document.getElementById(targetId).classList.add("active");
 
       // Banner se zobrazí jen u úvodu, jinde se schová
-      if(targetId === "uvod") {
+      if (targetId === "uvod") {
         banner.style.display = "block";
       } else {
         banner.style.display = "none";
@@ -1571,6 +1587,8 @@ Místo v táboře je rezervováno až po přijetí platby. Kapacita je omezená,
 
 </body>
 </html>
+
+
 
 
 
