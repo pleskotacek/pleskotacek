@@ -1388,27 +1388,10 @@ Místo v táboře je rezervováno až po přijetí platby. Kapacita je omezená,
 </footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const menuItems = document.querySelectorAll("#menu div");
-  const sections = document.querySelectorAll(".content-section");
 
-  menuItems.forEach(item => {
-    item.addEventListener("click", () => {
-      menuItems.forEach(el => el.classList.remove("active"));
-      item.classList.add("active");
-      sections.forEach(section => section.classList.remove("active"));
-      const target = item.getAttribute("data-target");
-      const targetSection = document.getElementById(target);
-      if (targetSection) {
-        targetSection.classList.add("active");
-      }
-    });
-  });
-});
-</script>
-  
 </body>
 </html>
+
 
 
 
