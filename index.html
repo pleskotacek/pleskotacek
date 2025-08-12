@@ -1224,8 +1224,201 @@ Místo v táboře je rezervováno až po přijetí platby. Kapacita je omezená,
   </div>
 </section>
   
-  <section id="fotogalerie" class="content-section">
-    sikibdi
+    <!-- Začátek sekce Fotogalerie -->
+<section id="fotogalerie" style="padding: 40px 0; background: #f8f9fa;">
+  <div class="wrap" style="max-width: 1100px; margin: auto; padding: 0 20px;">
+    <h2 style="color: #2E4A1F; border-bottom: 2px solid #7BB661; padding-bottom: 10px; margin-top: 0; margin-bottom: 20px;">Fotogalerie tábora</h2>
+    <p style="color: #4B3B2B; margin-bottom: 20px;">Fotky se automaticky načítají z naší galerie. Kliknutím na fotku ji zvětšíte.</p>
+    <div id="status" style="margin-bottom: 20px; color: #7BB661; font-style: italic;">Načítám fotky...</div>
+    
+    <!-- Gallery Grid -->
+    <div id="gallery" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px;"></div>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center;">
+  <div style="position: relative; max-width: 90%; max-height: 90%;">
+    <img id="lightbox-img" src="" alt="" style="max-height: 80vh; max-width: 90vw; border-radius: 4px;">
+    <div style="position: absolute; top: -40px; right: 0; display: flex; gap: 10px;">
+      <button id="prev-img" style="background: #7BB661; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">❮ Předchozí</button>
+      <button id="next-img" style="background: #7BB661; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">Další ❯</button>
+      <button id="close-lightbox" style="background: #2E4A1F; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">✕ Zavřít</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Configuration - UPDATE THESE TO MATCH YOUR REPOSITORY
+  const owner = 'fitigalerie';
+  const repo = 'foto';
+  const path = 'fitigalerie'; // This should be the folder containing your images
+  const imgExt = ['.png','.jpg','.jpeg','.webp','.gif'];
+  const el = id => document.getElementById(id);
+
+  // State
+  let allImages = [];
+  let currentIndex = 0;
+
+  // DOM Elements
+  const gallery = el('gallery');
+  const status = el('status');
+  const lightbox = el('lightbox');
+  const lightboxImg = el('lightbox-img');
+  const closeLightbox = el('close-lightbox');
+  const prevImg = el('prev-img');
+  const nextImg = el('next-img');
+
+  // Fetch folder contents from GitHub
+  async function fetchFolder(){
+    const api = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+    try {
+      const res = await fetch(api);
+      if(!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+      return await res.json();
+    } catch (error) {
+      console.error("Error fetching from GitHub:", error);
+      throw error;
+    }
+  }
+
+  // Check if file is an image
+  function isImage(name){
+    if (!name) return false;
+    const n = name.toLowerCase();
+    return imgExt.some(e => n.endsWith(e));
+  }
+
+  // Create gallery card
+  function makeCard(url, name){
+    const card = document.createElement('div');
+    card.style.background = 'white';
+    card.style.borderRadius = '8px';
+    card.style.overflow = 'hidden';
+    card.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+    card.style.cursor = 'pointer';
+    card.style.transition = 'transform 0.2s';
+    
+    card.onmouseenter = () => card.style.transform = 'scale(1.02)';
+    card.onmouseleave = () => card.style.transform = 'scale(1)';
+    
+    const img = document.createElement('img');
+    img.loading = 'lazy';
+    img.src = url;
+    img.alt = name || 'Foto z tábora';
+    img.style.width = '100%';
+    img.style.height = '180px';
+    img.style.objectFit = 'cover';
+    
+    const info = document.createElement('div');
+    info.style.padding = '10px';
+    info.style.textAlign = 'center';
+    
+    const title = document.createElement('div');
+    title.textContent = name ? name.replace(/\..+$/, '') : 'Foto';
+    title.style.color = '#2E4A1F';
+    title.style.fontWeight = '500';
+    title.style.marginBottom = '5px';
+    title.style.whiteSpace = 'nowrap';
+    title.style.overflow = 'hidden';
+    title.style.textOverflow = 'ellipsis';
+    
+    info.appendChild(title);
+    card.appendChild(img);
+    card.appendChild(info);
+    
+    card.onclick = () => openLightbox(url, name);
+    
+    return card;
+  }
+
+  // Open image in lightbox
+  function openLightbox(url, name) {
+    currentIndex = allImages.findIndex(img => img.download_url === url);
+    updateLightbox();
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Update lightbox image
+  function updateLightbox() {
+    if (allImages.length > 0 && currentIndex >= 0 && currentIndex < allImages.length) {
+      lightboxImg.src = allImages[currentIndex].download_url;
+      lightboxImg.alt = allImages[currentIndex].name || 'Foto z tábora';
+    }
+  }
+
+  // Main load function
+  async function load(){
+    gallery.innerHTML = '';
+    status.textContent = 'Načítám fotky...';
+    
+    try {
+      const items = await fetchFolder();
+      allImages = items
+        .filter(it => it.type === 'file' && isImage(it.name))
+        .sort((a,b) => (b.name || '').localeCompare(a.name || '')); // Newest first
+      
+      if (allImages.length === 0) {
+        status.textContent = 'Ve složce nejsou žádné fotky.';
+        return;
+      }
+      
+      // Render all images
+      gallery.innerHTML = '';
+      allImages.forEach(img => {
+        gallery.appendChild(makeCard(img.download_url, img.name));
+      });
+      
+      status.textContent = `Načteno ${allImages.length} fotek.`;
+      
+    } catch(err) {
+      console.error("Gallery error:", err);
+      status.textContent = 'Chyba při načítání fotek. Zkuste to prosím později.';
+      status.style.color = '#d9534f';
+    }
+  }
+
+  // Event listeners
+  closeLightbox.onclick = () => {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  };
+  
+  prevImg.onclick = () => {
+    if (allImages.length > 0) {
+      currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+      updateLightbox();
+    }
+  };
+  
+  nextImg.onclick = () => {
+    if (allImages.length > 0) {
+      currentIndex = (currentIndex + 1) % allImages.length;
+      updateLightbox();
+    }
+  };
+  
+  // Close lightbox when clicking outside image
+  lightbox.onclick = (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  };
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display === 'flex') {
+      if (e.key === 'ArrowLeft') prevImg.click();
+      if (e.key === 'ArrowRight') nextImg.click();
+      if (e.key === 'Escape') closeLightbox.click();
+    }
+  });
+
+  // Initialize on load
+  window.addEventListener('load', load);
+</script>
   </section>
 
  <section id="kontakt" class="content-section">
@@ -1362,6 +1555,7 @@ Místo v táboře je rezervováno až po přijetí platby. Kapacita je omezená,
 
 </body>
 </html>
+
 
 
 
